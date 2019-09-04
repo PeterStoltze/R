@@ -1,5 +1,5 @@
 ---
-title: "Statistical Programming with R 2019"
+title: "Statistical Programming with R"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -8,19 +8,20 @@ output:
 
 # Intro {.sidebar}
 
-This dashboard covers the course materials for the course [**USS24: Statistical programming with R**](https://www.utrechtsummerschool.nl/courses/social-sciences/data-science-statistical-programming-with-r). 
+This dashboard covers the materials for the course introducing R. Course held in Sarejevo, September 17-20, 2019.
 
 ---
 
-Course leader: [Gerko Vink](https://www.gerkovink.com) <br>
 Instructors: 
 
- - [Erik-Jan van Kesteren](https://erikjanvankesteren.nl)
- - [Duco Veen](https://www.ducoveen.com)
- - [Ayoub Bagheri](https://bagheria.github.io)
+ - Anne Vinkel-Hansen (aih@dst.dk)
+ - Peter Tibert Stoltze (psl@dst.dk)
 
-Study load: 1.5 ECTS <br>
-Location: [Koningsberger building - Cosmos hall](https://www.uu.nl/en/victor-j-koningsberger-building)
+
+---
+
+Material adopted from [Gerko Vink](https://github.com/gerkovink/R)
+
 
 ---
 # Quick Overview
@@ -42,11 +43,6 @@ The course deals with the following topics:
 
 The course starts at a very basic level and builds up gradually. At the end of the week, participants will master advanced programming skills with R. No previous experience with R is required.
 
-Prerequisites:
-Participants are requested to bring their own laptop for lab meetings.
-
-### Certificate
-Participants will receive a certificate at the end of the course. 
 
 ## Column 2
 
@@ -66,6 +62,7 @@ Participants will receive a certificate at the end of the course.
 |       | **break** |            |
 | 15:45 | 16.30  | Practical |
 | 16:30 | 17:00  | Discussion |
+
 
 # How to prepare
 
@@ -280,24 +277,6 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Impractical O](Contents/Material/Part O - Monte carlo simulation/Practical_O.html)
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
-
-# Course archive
-
-## Column 1
-
-### Download a course archive 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. At the end of the course, you can download all course materials [here](Contents/Material/Archive/S24_summerschool2019.zip). 
-
-### Such a wonderful group
-
-- [Such nice people](Contents/img/pic1.jpg)
-- [Crazy about StatsWithR](Contents/img/pic2.jpg)
-
-Above you can find the group pictures. We really enjoyed having you in our course. 
-
-Ayoub, Duco, Erik-Jan and Gerko
-
-
 
 # To continue
 
