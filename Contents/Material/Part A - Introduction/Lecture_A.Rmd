@@ -1,22 +1,16 @@
 ---
 title: "Introduction"
-author: "Gerko Vink"
+author: "NN"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
-    logo: logo.png
+    css: style.css
+    logo: logo_en.png
+    transition: 0
     smaller: yes
-    widescreen: no
+    # widescreen: yes
+    
 ---
-
-## Very useful
-You can view my screen on your machine: 
-
-[join.me/statistics_uu](http://join.me/statistics_uu)
-
-and access the course materials quickly from
-
-[www.gerkovink.com/R](https://www.gerkovink.com/R)
 
 # Overview of this course
 ## Program
