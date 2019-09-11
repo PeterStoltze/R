@@ -48,23 +48,21 @@ The course starts at a very basic level and builds up gradually. At the end of t
 
 ### Course schedule 
 
-| Time  |      | Topic      |
-|:--------|:-------|:-------------|
-| *Tuesday* | |
-| 13.00 | 15.30  | Introduction to R and Rstudio |
-|:--------|:-------|:-------------|
-| *Wednesday* | |
-| 09.00 | 12.00  | Data in R, reading in and exporting data |
-|       | *Break* |            |
-| 13.00 | 15.30  | Loops and functions |
-|:--------|:-------|:-------------|
-| *Thursday* | |
-| 09.00 | 12.00  | Data manipulation and basic statistics |
-|       | *Break* |            |
-| 13.00 | 15.30  | Data visualisation |
-|:--------|:-------|:-------------|
-| *Friday* | |
-| 09.00 | 12.00  | Evaluation, agreement on summary mission report |
+| Time        | Topic                                           |
+|:------------|:------------------------------------------------|
+| *Tuesday*   |                                                 |
+| 13.00-15.30 | Introduction to R and Rstudio                   |
+| *Wednesday* |                                                 |
+| 09.00-12.00 | Data in R, reading in and exporting data        |
+|             | *Break*                                         |             
+| 13.00-15.30 | Loops and functions                             |
+| *Thursday*  |                                                 |
+| 09.00-12.00 | Data manipulation and basic statistics          |
+|             | *Break*                                         |
+| 13.00-15.30 | Data visualisation                              |
+| *Friday*    |                                                 |
+| 09.00-12.00 | Evaluation, agreement on summary mission report |
+
 
 # How to prepare
 
@@ -73,11 +71,11 @@ The course starts at a very basic level and builds up gradually. At the end of t
 ### Preparing your machine for the course
 Dear all, 
 
-To realize a steeper learning curve, we will use some functionality that is not part of the base installation for `R`. The below steps guide you through installing both `R` as well as the necessary additions. 
+The below steps guide you through installing both `R` as well as the necessary additions.
 
-We look forward to see you all,  
+We look forward to see you all in Sarajevo,  
 
-*The Statistical Programming with R Team*
+*Anne and Peter*
 
 ### **System requirements**
 
@@ -106,7 +104,7 @@ install.packages(c("ggplot2", "stats","tidyverse", "magrittr", "micemd", "jomo",
 If you are not sure where to execute code, use the following figure to identify the console:
 
 <center>
-  <img src="console.png" alt="HTML5 Icon" width = 70%>
+  <img src="console.png" alt="HTML5 Icon" width = 50%>
 </center>
 
 Just copy and paste the installation command and press the return key. When asked 
@@ -117,8 +115,6 @@ compilation? (Yes/no/cancel)
 ```
 
 type `Yes` in the console and press the return key. 
-
-
 
 
 # Monday
@@ -278,14 +274,16 @@ All lectures are in `html` format. Practicals are walkthrough files that guide y
 
 ### What to do after the course
 
-- [R for Data Science](https://r4ds.had.co.nz): a wonderful book that details a usefull toolset for current and aspiring data scientists. 
-- [Introduction to Statistical Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/): an introductory book on statistical learning, with applications in R.
-- [Data Analysis and Graphics Using R](http://www.pindex.com/uploads/post_docs/Maindonald%20Data%20Analysis%20and%20Graphics(PINDEX-DOC-6953).pdf): a detailed book that covers a lot about categorical data analysis and fitting `glm`s in `R`.
+The following references are currently available for free, either as pdfs or as extensive webpages (written with [RMarkdown](https://rmarkdown.rstudio.com/) and [bookdown](https://bookdown.org/)). They are all very useful and we highly recommend them. 
 
-The above references are (currently) available for free in these links. I deem them very useful and I would highly recommend them. 
+- [R for Data Science](https://r4ds.had.co.nz): written by Hadley Wickham and Garrett Grolemund this book relies almost exclusively on the [tidyverse](https://www.tidyverse.org/) approach to data analysis. Many highly effective tools will be right at your fingertips after reading this book and working through the many exercises.
+- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/): a great read by Garrett Grolemund emphasizing programming techniques with R. 
+- [Advanced R](https://adv-r.hadley.nz/): You want to gain deeper knowledge of R and you wnat to learn from one of the most influential R contributors. This one is for you!
+- [Introduction to Statistical Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/): an introductory book on statistical learning, with applications in R. The R code is somewhat old-style and you might be able to find newer packages for the tasks, but ths is a solid read well worth the effort.
+- [Data Analysis and Graphics Using R](http://www.pindex.com/uploads/post_docs/Maindonald%20Data%20Analysis%20and%20Graphics(PINDEX-DOC-6953).pdf): a detailed book that covers a lot about categorical data analysis and fitting `glm`s in `R`.
 
 ## Column 2
 
-### For fun
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">My wife asked me what machine learning is and I said: remember when we ordered the hot plate for the boat and amazon suggested buying all the equipment needed to make a full meth lab?</p>&mdash; (((Kane Baccigalupi))) (@rubyghetto) <a href="https://twitter.com/rubyghetto/status/1058220004301127680?ref_src=twsrc%5Etfw">November 2, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- ### For fun -->
+<!-- <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">My wife asked me what machine learning is and I said: remember when we ordered the hot plate for the boat and amazon suggested buying all the equipment needed to make a full meth lab?</p>&mdash; (((Kane Baccigalupi))) (@rubyghetto) <a href="https://twitter.com/rubyghetto/status/1058220004301127680?ref_src=twsrc%5Etfw">November 2, 2018</a></blockquote> -->
+<!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
