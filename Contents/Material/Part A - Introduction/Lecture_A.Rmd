@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-author: "NN"
+author: "Peter Stoltze and Anne Vinkel Hansen"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
@@ -15,16 +15,16 @@ output:
 # Overview of this course
 ## Program
 <center>
-<img src="figures/schedule.png" alt="HTML5 Icon" width = 70%>
+<img src="figures/schedule.png" alt="HTML5 Icon" width = 90%>
 </center>
 
-# Goal of this course
-## Learn to keep your *cool*
-<center>
-  <img src="figures/state_programming.png" alt="HTML5 Icon" width = 100%>
-</center>
+<!-- # Goal of this course -->
+<!-- ## Learn to keep your *cool* -->
+<!-- <center> -->
+<!--   <img src="figures/state_programming.png" alt="HTML5 Icon" width = 100%> -->
+<!-- </center> -->
 
-and build the foundation for a succesfull scripting career
+<!-- and build the foundation for a succesfull scripting career -->
 
 # What is R?
 
@@ -86,6 +86,9 @@ and build the foundation for a succesfull scripting career
 ```{r}
 a <- 100
 ```
+
+- Life hack: In RStudio use the shortcut "alt + -" (hyphen) to produce the left arrow `<-` in an R file
+
 
 ## Calling objects
 - Calling things in R is also very straightforward: 
