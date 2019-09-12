@@ -1,6 +1,6 @@
 ---
 title: "R-functionality"
-author: "Anne Vinkel & Peter Stoltze"
+author: "Gerko Vink, Anne Vinkel & Peter Stoltze"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
@@ -219,6 +219,12 @@ The `xlsx` package contains functions `readxlsx` and `writexlsx` for working wit
 - `read.csv2` reads semicolon-delimited files with decimal commas
 - `read.delim` reads tab-delimited files with decimal points
 - `read.delim2` reads tab-delimited files with decimal commas
+
+### SAS, Stata, SPSS and Mplus
+
+- The package [`haven`](https://haven.tidyverse.org/index.html) provides wonderful functions to import and export many data types from software such as Stata, SAS, SPSS, and so on.
+
+- For integrating Mplus into `R`, package `MplusAutomation` is essential.
 
 
 ## Databases
