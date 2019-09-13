@@ -1,6 +1,6 @@
 ---
 title: 'Data visualisation'
-author: "Anne Vinkel Hansen & Peter Stoltze"
+author: "Gerko Vink, Anne Vinkel Hansen & Peter Stoltze"
 date: "Statistical Programming in R"
 output:
   ioslides_presentation:

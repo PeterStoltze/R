@@ -68,6 +68,9 @@ With a standard plotting device in `R`:
 ---
 
 7. **Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year's mean height in deviations from the overall average `hgt`** 
+---
+
+6. **Read in the `sf` package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the `REGIONNAVN` variable to see the Danish regions. Plot the municipal-level population**
 
 ---
 
