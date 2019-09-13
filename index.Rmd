@@ -20,7 +20,7 @@ Instructors:
 
 ---
 
-Material adopted from [Gerko Vink](https://github.com/gerkovink/R)
+Material adapted from [Gerko Vink](https://github.com/gerkovink/R)
 
 
 ---
@@ -198,6 +198,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html)
     - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
     - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html).
+    - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
 
@@ -211,6 +212,9 @@ All lectures are in `html` format. Practicals are walkthrough files that guide y
 
 The above link details pretty much all you can do with package `ggplot2`.
 
+- [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/)
+
+The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.   
 
 # To continue
 

@@ -255,9 +255,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -276,25 +274,98 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -304,8 +375,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Practical I</h1>
-<h4 class="author"><em>Gerko Vink &amp; Erik-Jan van Kesteren</em></h4>
-<h4 class="date"><em>Statistical Programming in R</em></h4>
+<h4 class="author">Gerko Vink &amp; Erik-Jan van Kesteren</h4>
+<h4 class="date">Statistical Programming in R</h4>
 
 </div>
 
@@ -317,8 +388,9 @@ $(document).ready(function () {
 <p>The following packages are required for this practical:</p>
 <pre class="r"><code>library(dplyr)
 library(magrittr)
-library(mice)
-library(ggplot2)</code></pre>
+library(mice)</code></pre>
+<pre><code>## Warning: package &#39;mice&#39; was built under R version 3.6.1</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
 <p>and if you’d like the same results as I have obtained, you can fix the random seed</p>
 <pre class="r"><code>set.seed(123)</code></pre>
 <hr />
@@ -352,17 +424,20 @@ library(ggplot2)</code></pre>
 <li><strong>Create a density plot for <code>age</code> with different curves for boys from the <code>city</code> and boys from rural areas (<code>!city</code>).</strong></li>
 </ol>
 <hr />
-<ol start="7" style="list-style-type: decimal">
-<li><strong>Create a diverging bar chart for <code>hgt</code> in the <code>boys</code> data set, that displays for every <code>age</code> year that year’s mean height in deviations from the overall average <code>hgt</code></strong></li>
+</div>
+<div id="create-a-diverging-bar-chart-for-hgt-in-the-boys-data-set-that-displays-for-every-age-year-that-years-mean-height-in-deviations-from-the-overall-average-hgt" class="section level2">
+<h2>7. <strong>Create a diverging bar chart for <code>hgt</code> in the <code>boys</code> data set, that displays for every <code>age</code> year that year’s mean height in deviations from the overall average <code>hgt</code></strong></h2>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Read in the <code>sf</code> package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the <code>REGIONNAVN</code> variable to see the Danish regions. Plot the municipal-level population</strong></li>
 </ol>
 <hr />
 <p>End of Practical</p>
 <hr />
-</div>
 <div id="useful-references" class="section level4">
 <h4>Useful References</h4>
 <p><a href="https://ggplot2.tidyverse.org/reference/index.html">The <code>ggplot2</code> reference webpage</a></p>
 <hr />
+</div>
 </div>
 
 
