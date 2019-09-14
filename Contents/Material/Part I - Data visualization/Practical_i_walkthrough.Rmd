@@ -27,6 +27,7 @@ library(dplyr)
 library(magrittr)
 library(mice)
 library(ggplot2)
+library(stringr)
 ```
 
 and if you'd like the same results as I have obtained, you can fix the random seed
@@ -316,6 +317,72 @@ aggregate(hgt ~ reg, data = ., mean)
 in the pipe. Problem solved!
 
 The specifics about calling functions and evaluating their arguments can always be found in the help. Try `?aggregate` to see all forms this function's call may take. 
+
+
+---
+
+6. **Read in the `sf` package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the `REGIONNAVN` variable to see the Danish regions. Plot the municipal-level population**
+```{r}
+library(sf)
+denmark <- st_read("DK_map.shp")
+class(denmark)
+```
+
+The default plot for an object of class `sf` is a multi-plot of all attributes, up to a reasonable maximum:
+```{r}
+plot(denmark)
+```
+
+If we want to view the shapes themselves without the attributes, we can plot the `st_geometry`
+```{r}
+plot(st_geometry(denmark))
+```
+
+Or, with `ggplot2`
+```{r}
+denmark %>% ggplot() + geom_sf()
+```
+
+Say we want to colour the maps by the administrative regions coded in the `REGIONNAVN` variable:
+```{r}
+denmark <- denmark %>% mutate( REGIONNAVN = word( REGIONNAVN , 2))
+plot(denmark["REGIONNAVN"], key.pos = 1, key.length = 1)
+```
+
+The legend is being bothersome here, though. The `ggplot` default is prettier, but also, we could move the legend inside the plot and use a more colorblind-friendly color scale:
+```{r}
+denmark %>% ggplot( aes( fill = REGIONNAVN  ) ) + geom_sf() +
+  theme(legend.position = c(0.8,0.7)) +
+  scale_fill_brewer(palette = "Set2")
+```
+
+We plot the municipal-level population
+
+```{r}
+denmark %>% mutate( population = population/1000) %>% 
+  ggplot(aes( fill = population)) +
+  geom_sf() + 
+  scale_fill_viridis_c() + # The viridis color scale gives more visual nuance
+  labs( fill = "Population,\nthousands")
+```
+
+But perhaps population per square kilometer might be more informative than just population
+```{r}
+denmark$area <- st_area(denmark)/(1000^2)
+
+denmark %>% 
+  group_by(KOMKODE) %>% 
+  summarise( total.area = sum( as.numeric( area ) ), 
+             population = first( population )) %>% 
+  mutate( pop.area = population/total.area) %>% 
+  ggplot( aes( fill = pop.area)) + 
+  geom_sf()+ 
+  scale_fill_viridis_c() + # The viridis color scale gives more visual nuance
+  labs( fill = "Population per \nsquare kilometer")
+
+```
+
+Our `sf` object contains more than one feature for some of the municipalities. The population number given is for the total municipality, so we need to compute the total area for each municipality. 
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "R-functionality"
-author: "Gerko Vink"
+author: "Gerko Vink, Anne Vinkel & Peter Stoltze"
 date: "Statistical Programming with R"
 output: 
   html_document:
@@ -40,6 +40,14 @@ pre { /* Code block - determines code spacing between lines */
 
 ---
 
+
+## This lecture:
+* `R` functionality
+  + The blueprint of `R` 
+  + Workspaces and projects
+  + Classes
+* Reading in and exporting data
+
 # The blueprint of `R` 
 
 ## Layers in `R`
@@ -54,7 +62,7 @@ There are several 'layers' in `R`. Some layers you are allowed to fiddle around 
 ## Environments
 The global environment can be seen as a olympic-size swimming pool. Everything you do has its place there. 
 
-If you'd like, you may create another, seperate environment to work in. 
+If you'd like, you may create another, separate environment to work in. 
 
 - A user environment would by default not have access to other environments
 
@@ -70,7 +78,7 @@ If you'd like, you may create another, seperate environment to work in.
 - Packages have their own space. 
 
     - Everything needed to run the functions in a package is needly contained within its own space
-    - See packages as seperate (mini) pools that are connected to the main pool (the global environment)
+    - See packages as separate (mini) pools that are connected to the main pool (the global environment)
 
 ## Loading packages
 
@@ -103,18 +111,27 @@ Alternatively, you can also do it in `RStudio` through
 
 # `R` in depth
 
-## Workspaces and why you should sometimes save them
+## Workspaces and why you should (generally) _not_ save them{.smaller}
+
 A workspace contains all changes you made to environments, functions and namespaces. 
 
 A saved workspace contains everything at the time of the state wherein it was saved. 
 
-You do not need to run all the previous code again if you would like to continue working at a later time. 
+You can reload a saved workspace and continue working at a later point
 
-- You can save the workspace and continue exactly where you left. 
+When you exit an R session, you’re faced with the question of whether or not to save your workspace. _You should almost never answer yes_.
 
-Workspaces are compressed and require relatively little memory when stored. The compression is very efficient and beats reloading large datasets from raw text. 
+### Why not to save?
 
-## History and why it is useful
+- *Code* is reproducible and logical
+- A *saved workspace* is whatever you did earlier and then forgot about
+
+## Workspaces and how not to save them
+<center> 
+<img src="rstudio-dont-save-workspace.png" alt="HTML5 Icon" width = 80%>
+</center>
+
+## History
 `R` by default saves (part of) the code history and `RStudio` expands this functionality greatly. 
 
 Most often it may be useful to look back at the code history for various reasons.
@@ -125,68 +142,34 @@ Most often it may be useful to look back at the code history for various reasons
     2. Use the history tab in the environment pane. The complete project history can be found here and the history can be searched. This is particularly convenient when you know what code you are looking for. 
     
 ## Working in projects in `RStudio`
+`R` has a notion of the **working directory**. This is where `R` will look for, and save, files unless directed elsewhere
+
+You can set your working directory manually with `setwd()`. But for a better, more stable and reproducible workflow, use **projects**: 
+<right> 
+<img src="create project.png" alt="HTML5 Icon" width = 75%>
+</right>
+
+## Working in projects in `RStudio`
+
 - Every project has its own history
-- Every research project has its own project
-- Every project can have its own folder, which also serves as a research archive
 - Every project can have its own version control system
-- R-studio projects can relate to Git (or other online) repositories
+- When opening a project, this sets the working directory in the same folder
+- When working in a project, files belonging to the same project are stored together
 
-# Modeling
 
-## Modeling in `R`
-To model objects based on other objects, we use `~` (tilde)
-
-    - For example, to model body mass index (BMI) on weight, we would type
-```{r eval=FALSE}
-BMI ~ weight
-```
-Tilde is used to separate the left- and right-hand sides in a model formula.
-
-For functions (or models), within models we use `I()`
-    - For example, to model body mass index (BMI) on its deterministic function of weight and height, we would type
-```{r eval=FALSE}
-BMI ~ I(weight / height^2)
-```
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-require(mice)
-```
-
-## Example
-Remember the `boys` data from package `mice`:
-```{r}
-lm(bmi ~ wgt, data = boys)
-```
-
-## Example continued
-Remember the `boys` data from package `mice`:
-```{r}
-lm(bmi ~ I(wgt / (hgt / 100)^2), data = boys)
-```
-
-## More efficient
-It is 'nicer' to store the output from the function in an object. The convention for regression models is an object called `fit`. 
-```{r}
-fit <- lm(bmi ~ I(wgt / (hgt / 100)^2), data = boys)
-```
-The object `fit` contains a lot more than just the regression weights. To inspect what is inside you can use
-```{r}
-ls(fit)
-```
-
-## Inspecting what is inside `fit`
-Another approach to inspecting the contents of `fit` is the function `attributes()`
-```{r}
-attributes(fit)
-```
-
-The benefit of using `attributes()` is that it directly tells you the class of the object. 
+# Classes
 
 ## Classes in R {.smaller}
-```{r}
-class(fit)
+Remember the `boys` data from package `mice`:
+```{r, message=F, echo=T, warning=F}
+library(mice)
+class(boys)
+
+model <- lm(bmi ~ I(wgt / (hgt / 100)^2), data = boys)
+class(model)
 ```
 
+## Classes in R {.smaller}
 Classes are used for an object-oriented style of programming. This means that you can write a specific function that
 - has fixed requirements with respect to the input. 
 - presents output or graphs in a predefined manner. 
@@ -239,6 +222,50 @@ If function `plot.lm()` would not exist, `R` tries to apply function `plot()` (w
 
 Since the elements that class `"lm"` returns are known, creating a generic function class is straightforward.  
 
+# Importing and exporting data
+## `RData` and `RDS`  files
+A single `R` object is saved as an `RDS` file
+```{r, eval = F}
+saveRDS(boys, file="SaveTheBoys.RDS")
+moreboys <- readRDS("SaveTheBoys.RData")
+```
+
+Remember about projects: The `SaveTheBoys` file now lies in the same directory as my project file. 
+
+Multiple `R` objects (or entire workspaces) can be saved as `RData`-files with `save()` and loaded with `load()`
+
+```{r, eval = F}
+save(boys, walking, file = "SaveTheseFiles.RData")
+read(file = "SaveTheseFiles.RData")
+```
+
+
+## Delimited files
+Import delimited files with the functions `read.table`, `read.csv2` or `read.delim2`
+Export with `write.table`, `write.csv2` or `write.delim2`
+
+The `xlsx` package contains functions `readxlsx` and `writexlsx` for working with excel files in R 
+
+### Why the '2'?
+
+- `read.csv` reads comma-delimited files with decimal points
+- `read.csv2` reads semicolon-delimited files with decimal commas
+- `read.delim` reads tab-delimited files with decimal points
+- `read.delim2` reads tab-delimited files with decimal commas
+
+
+## Databases
+You can keep your data in an Oracle database and work with it in R
+
+- `library(ROracle)`: Oracle Database interface (DBI) driver for R.
+    - Read Oracle tables into R 
+    - Upload R tables into Oracle
+    - Write SQL syntax in R and execute it on the database
+
+
+- `library(dbplyr)`: Lets you use dplyr syntax to work with databases
+
+# Practical
 
 # `R`-coding <br> <br> The Google style guide
 

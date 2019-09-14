@@ -1,6 +1,6 @@
 ---
 title: "Practical C"
-author: "Gerko Vink"
+author: "Gerko Vink, Anne Vinkel Hansen og Peter Stoltze"
 date: "Statistical Programming with R"
 output: html_document
 ---
@@ -10,21 +10,12 @@ output: html_document
 #### Exercises
 Begin this practical by setting the maximum line length in `R-Studio` to 80 characters. Go to `RStudio`'s `Preferences` (or `Global Options` under `Tools`) --> `Code` --> `Display`, and tick the `show margin` box. Make sure that the `margin column` is set to `80`
 
----
-
-1. **Install package `mice`. **
-
-Go to `Tools` > `Install Packages` in `RStudio`. If you are connected to the internet, select  `Repository` under `Install From` and type `mice` under `Packages`. Leave the `Install to Library` at default and make sure that `Install Dependencies` is selected. Click install. If you are not connected to the internet, select `Package Archive File` under "Install from" and navigate to the respective file on your drive. 
-
-Some packages depend on other packages, meaning that their functionality may be limited if their dependencies are not installed. Installing dependencies is therefor recommended, but internet connectivity is required. 
-
-If all is right, you will receive a message in the console that the package has been installed (as well as its dependencies. 
-
-ALternatively, if you know the name of the package you would like to install - in this case `mice` - you can also call `install.packages("mice")` in the console window.
+This is also a good time to set Rstudio to not automatically restore .RData into workspace at startup and not to save workspace to .RData on exit. (`Tools` --> `Global Options` --> `General`)
 
 ---
 
-2. **Load package `mice`. **
+
+1. **Load package `mice`. **
 Loading packages can be done through functions `library()` and `require()`.
 ```{r}
 library(mice)
@@ -34,13 +25,13 @@ If you use `require()` within a function, and the required package is not availa
 
 ---
 
-3. **Most packages have datasets included. Open the `mammalsleep` dataset from package `mice` by typing `mammalsleep` in the console, and subsequently by using the function `View()`. **
+2. **Most packages have datasets included. Open the `mammalsleep` dataset from package `mice` by typing `mammalsleep` in the console, and subsequently by using the function `View()`. **
 
 Using `View()` is preferred for inspecting datasets that are large. `View()` opens the dataset in a spreadsheet-like window (conform MS Excel, or SPSS). If you `View()` your own datasets, you can even edit the datasets' contents. 
 
 ---
 
-4. **Write the mammalsleep dataset from package `mice` to the work directory as a tab-delimited text file with `.` as a decimal seperator. Name the file `mammalsleep.txt`**
+3. **Write the mammalsleep dataset from package `mice` to the work directory as a tab-delimited text file with `.` as a decimal seperator. Name the file `mammalsleep.txt`**
 
 ```{r, warning=FALSE, message=FALSE}
 library(mice)
@@ -50,7 +41,7 @@ The command `sep = "\t"` indicates that the file is tabulated and the command `d
 
 ---
 
-5. **Import the `mammalsleep.txt` file. **
+4. **Import the `mammalsleep.txt` file. **
 ```{r}
 sleepdata <- read.table("mammalsleep.txt", sep = "\t", dec = ".", header = TRUE)
 ```
@@ -63,7 +54,7 @@ There are many packages that facilitate importing datasets from other statistica
 
 ---
 
-6. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. **
+5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. **
 
 If you would like to know more about this dataset, you can open the help for the `mammalsleep` dataset in package `mice` through `?mammalsleep`. Don't forget to load package `mice` first. 
 
@@ -86,7 +77,7 @@ One thing that may have caught your attention is the relation between `ts`, `ps`
 
 ---
 
-7. **Save the current workspace. Name the workspace `Practical_C.RData`. Also, save the sleepdata file as a separate workspace called `Sleepdata.RData`. **
+6. **Save the current workspace. Name the workspace `Practical_C.RData`. Also, save the sleepdata file as a separate workspace called `Sleepdata.RData`. **
 
 Now that we have imported our data, it may be wise to save the current workspace, i.e. the current state of affairs. Saving the workspace will leave everything as is, so that we can continue from this exact state at a later time, by simply opening the workspace file. To save everything in the current workspace, type
 ```{r}
@@ -102,7 +93,7 @@ With the save functions, any object in the workspace can be saved.
 
 ---
 
-8. **Some animals were not used in the calculations by Allison and Cicchetti. Exclude the following animals from the sleepdata dataset: Echidna, Lesser short-tailed shrew and Musk shrew. Save the dataset as sleepdata2.** Tip: use the square brackets to indicate [rows, columns].
+7. **Some animals were not used in the calculations by Allison and Cicchetti. Exclude the following animals from the sleepdata dataset: Echidna, Lesser short-tailed shrew and Musk shrew. Save the dataset as sleepdata2.** Tip: use the square brackets to indicate [rows, columns].
 
 There are two ways to exclude the three animals from the dataset. The first approach uses the names:
 ```{r}
@@ -121,14 +112,14 @@ Note that the numbered option requires less code, but the named option has a muc
 
 ---
 
-9. **Plot brain weight as a function of species. **
+8. **Plot brain weight as a function of species. **
 ```{r}
 plot(brw ~ species, data = sleepdata2)
 ```
 
 ---
 
-10. **Some animals have much heavier brains than other animals. Find out the names of the animals that have a brain weight larger than 1 standard deviation above the mean brain weight. Replicate the plot from Question 9 with only these animals and do not plot any information about the other animals. **
+9. **Some animals have much heavier brains than other animals. Find out the names of the animals that have a brain weight larger than 1 standard deviation above the mean brain weight. Replicate the plot from Question 9 with only these animals and do not plot any information about the other animals. **
 
 To find out which animals have a brain weight larger than 1 standard deviation above the mean brain weight:
 ```{r}
@@ -160,7 +151,7 @@ plot(brw ~ species, data = sleepdata3)
 
 ---
 
-11. **Plot the log [use `log()`] of brain weight as a function of short-wave sleep. Use dark red triangles as plotting characters. Name the x-axis `Short-wave sleep` and name the y-axis `Brain weight`. Finally, Give the overall title the name `How sleep type relates to brain weight`.** Hint: have a look at `par` in the help to find information about the plotting parameters.
+10. **Plot the log [use `log()`] of brain weight as a function of short-wave sleep. Use dark red triangles as plotting characters. Name the x-axis `Short-wave sleep` and name the y-axis `Brain weight`. Finally, Give the overall title the name `How sleep type relates to brain weight`.** Hint: have a look at `par` in the help to find information about the plotting parameters.
 ```{r}
 plot(log(brw) ~ sws, data = sleepdata2, type = "p", pch = 2, col = "dark red",
      xlab = "Short-wave sleep",
@@ -168,15 +159,17 @@ plot(log(brw) ~ sws, data = sleepdata2, type = "p", pch = 2, col = "dark red",
      main = "How sleep type relates to brain weight")
 ```
 
----
+--- 
 
-If your current software-analysis platform is different from `R`, chances are that you prepare your data in the software of your choice. In `R` there are fantastic facilities for importing and exporting data and I would specifically like to pinpoint you to package [`haven`](https://haven.tidyverse.org/index.html) by [Hadley Wickham](http://hadley.nz). It provides wonderful functions to import and export many data types from software such as Stata, SAS, SPSS, and so on. For integrating Mplus into `R`, package `MplusAutomation` is essential.
+11. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
 
----
+```{r}
+cabinet <- read.delim("cabinet.txt", encoding="UTF-8")
 
-### Useful links 
+head(cabinet)
+```
 
-- [`Package haven`](https://haven.tidyverse.org/index.html) for importing/exporting `SPSS`, `SAS` and `STATA` data.
+If you're going to work with special characters in your code files (say, writing comments in Danish) you will want to set the RStudio encoding to UTF-8 as welll, under `Tools` --> `Global Options` --> `Code` --> `Saving` 
 
 ---
 
