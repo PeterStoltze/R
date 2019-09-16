@@ -9,7 +9,7 @@ output: html_document
 
 Today we are going to get acquainted with `R`. A convenient way to work with `R` is through `RStudio` which adds many features and convenient options to the plain `R` interface. Most of these features go beyond the scope of this course, but as you will develop your `R` skillset, you might run into the need for them and hence `RStudio` so it is worthwhile to get to know `RStudio` right from the beginning. 
  
-If you have no experience with `R`, you will learn the most from following this document. If you have some experience with `R` already,  I suggest you try solving the questions without looking at the answers/walkthrough. You can always refer to the solutions as needed. 
+If you have no experience with `R`, you will learn the most from following this document step by step. If you have some experience with `R` already,  I suggest you try solving the questions without looking at the answers/walkthrough. You can always refer to the solutions as needed. 
 
 If you have any questions or if you feel that some code should be elaborated, feel free to ask.
 
@@ -32,7 +32,7 @@ If we open an `R`-script (i.e. a file that contains `R` code), a fourth pane ope
 
 ---
 
-2. **Open a new `R`-script.**
+2. **Create a new `R`-script**
 
 In the top left you will find ![alt text](figuresPractical/fig2.png). Click it and select `R`-script. (Real hackers of course quickly learn the shortcut, Ctrl+Shift+N)
 
@@ -58,7 +58,7 @@ The line `a <- 100` assigns the value `100` to object `a`. When you run your cod
 
 ---
 
-4. **Select both lines of code and run the code by pressing Ctrl+Enter or Ctrl+R (Windows/Linux)**
+4. **Select both lines of code and run the code by pressing Ctrl+Enter or Ctrl+R**
 
 Your code is executed and now appears in the console. If you type `a` in the console, `R` will return the assigned value. Try it! 
 ![alt text](figuresPractical/fig3.png)
@@ -89,9 +89,9 @@ The possibility to organize your work in projects is one of the benefits of usin
 
 ---
 
-7. **Open the `R`-script `notebook.R`. **
+7. **Open the `R`-script `notebook.R`**
 
-Download the file and open it in `RStudio` using Ctrl+O(pen) and browse to the position where you saved the file (possibly the same `Practicals` directory you just created).
+Download the file (possibly to the same `Practicals` directory you just created) and open it in `RStudio` using Ctrl+O(pen) and browse to the position where you saved the file .
 
 ---
 
@@ -101,26 +101,30 @@ If you do not understand what you are looking at, please ask for help.
 
 ---
  
-9. **Compile the script as a `html` file. Click on the ![alt text](figuresPractical/fig7.png) icon and select `html` as the notebook output format. **
+9. **Compile the script as a `html` file**
+
+Click on the ![alt text](figuresPractical/fig7.png) icon and select `html` as the notebook output format.
 
 The benefit of using html as an output format lies in the dimensional properties of a web-page. Especially when dealing with long code-files, large output from analyses or many graphs, exporting your file as html is much more convenient. You can simply scroll down or up to see the rest, instead of having to flip through pages back and forth to compare code, graphs or output. 
 
 ---
 
-10. **Inspect the `html` file you have created. **
+10. **Inspect the `html` file you have created**
 
 The notebook feature in `R-Studio` is very convenient; it runs and converts any `R`-code 
 to a readable file where code and output are visible. There is, however, an even better format to integrate `R`-code with text into a single document: Markdown!
 
 ---
 
-11. **Open the file `markdown.Rmd`. **
+11. **Open the file `markdown.Rmd`**
 
 Have a look at the code in the script and make sure that you understand what is going on. If you do not understand what you are looking at, please ask someone for help. 
 
 ---
 
-12. **Click `Knit HTML` to compile the file into a html-document. If necessary, install the required packages. Inspect the html file and compare it to the one you have created from the `notebook.R` file. **
+12. **Click `Knit HTML` to compile the file into a html-document.**
+
+If necessary, install the required packages. Inspect the html file and compare it to the one you have created from the `notebook.R` file. Content should be about just the same, but the layout is nicer and offers many more possibilities.
 
 In the rest of this course we will teach one another about `R` by showing our code and the resulting output in the plenary sessions. The notebook and markdown functionality in `R-Studio` are very convenient ways to do this. One of the reasons for using either format is that we can assess code on every machine, without the need for the packages / functionality that you used but someone else might not have. Please use one of these formats for the other practicals. 
 
@@ -139,4 +143,4 @@ A value is the most basic object in `R`. The next step up in objects is a vector
 
 ---
 
-End of `Practical A`. Play around with `R` and `R-studio` if you like. Maybe create a notebook or markdown template file for the rest of the course? Add your name to it.
+End of `Practical A`. Play around with `R` and `Rstudio` if you like. Maybe create a notebook or markdown template file for the rest of the course? Or try to figure out how to change the colour scheme for `RStudio` (always a favorite!)
