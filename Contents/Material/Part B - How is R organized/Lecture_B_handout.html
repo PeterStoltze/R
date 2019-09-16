@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Gerko Vink" />
+<meta name="author" content="Peter Stoltze and Anne Vinkel Hansen" />
 
 
 <title>Working with R</title>
@@ -1443,7 +1443,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4,h5",
+      selectors: "h1",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -1543,95 +1543,87 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Working with R</h1>
-<h4 class="author">Gerko Vink</h4>
+<h4 class="author">Peter Stoltze and Anne Vinkel Hansen</h4>
 <h4 class="date">Statistical Programming with R</h4>
 
 </div>
 
 
-<style type="text/css">
-
-body{ /* Normal  */
-      font-size: 12px;
-  }
-td {  /* Table  */
-  font-size: 12px;
-}
-h1.title {
-  font-size: 18px;
-  color: DarkBlue;
-}
-h1 { /* Header 1 */
-  font-size: 18px;
-}
-h2 { /* Header 2 */
-    font-size: 18px;
-}
-h3 { /* Header 3 */
-  font-size: 18px;
-}
-code.r{ /* Code block */
-    font-size: 12px;
-}
-pre { /* Code block - determines code spacing between lines */
-    font-size: 14px;
-}
-</style>
-<hr />
-<div id="recap" class="section level1">
-<h1>Recap</h1>
-<div id="so-far" class="section level2">
-<h2>So far</h2>
-<p>This morning we have learned the basics of programming in <code>R</code>:</p>
+<div id="recap" class="section level2">
+<h2>Recap</h2>
+<ul>
+<li>So far we have learned the basics of programming in <code>R</code>:
 <ul>
 <li>How to assign elements to objects (<code>&lt;-</code>)</li>
 <li>How to run code</li>
 <li>How to save <code>R</code>-scripts</li>
 <li>How to manage projects in <code>RStudio</code></li>
 <li>How to create notebooks or markdown HTML files</li>
+</ul></li>
+<li>Now we will add a bit more building blocks</li>
 </ul>
 </div>
-</div>
-<div id="objects-that-contain-more-than-one-element" class="section level1">
-<h1>Objects that contain more than one element</h1>
-<div id="more-than-one-element" class="section level2">
-<h2>More than one element</h2>
+<div id="vectors-and-matrices" class="section level1">
+<h1>Vectors and matrices</h1>
+<div id="numerical-vectors" class="section level2">
+<h2>Numerical vectors</h2>
 <ul>
-<li>We can assign more than one element to a vector (in this case a 1-dimensional congatenation of numbers 1 through 5)</li>
+<li>Several elements of the same type, e.g. the integers from 1 to 5, can be concatenated into a <strong>vector</strong></li>
 </ul>
 <pre class="r"><code>a &lt;- c(1, 2, 3, 4, 5)
 a</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
+</div>
+<div id="section" class="section level2">
+<h2></h2>
+<ul>
+<li>As is typical for <code>R</code> there a several ways to accomplish this</li>
+</ul>
 <pre class="r"><code>b &lt;- 1:5
 b</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
-<div id="more-than-one-element-with-characters" class="section level2">
-<h2>More than one element, with characters</h2>
-<p>Characters (or character strings) in <code>R</code> are indicated by the double quote identifier.</p>
+<div id="character-vectors" class="section level2">
+<h2>Character vectors</h2>
+<ul>
+<li>Characters (or character strings) in <code>R</code> are indicated by the double quote identifier</li>
+</ul>
 <pre class="r"><code>a.new &lt;- c(a, &quot;A&quot;)
 a.new</code></pre>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;A&quot;</code></pre>
-<p>Notice the difference with <code>a</code> from the previous slide</p>
+<ul>
+<li>Notice the difference with <code>a</code> from the previous slide</li>
+</ul>
 <pre class="r"><code>a</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
-<div id="quickly-identifying-elements-in-vectors" class="section level2">
-<h2>Quickly identifying elements in vectors</h2>
-<pre class="r"><code>rep(a, 15)</code></pre>
+<div id="section-1" class="section level2">
+<h2></h2>
+<ul>
+<li>Replicating elements to build composite vectors, e.g. repeat <code>a</code> 10 times (for one reason or another)</li>
+</ul>
+<pre class="r"><code>rep(a, 10)</code></pre>
 <pre><code>##  [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
-## [36] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
-## [71] 1 2 3 4 5</code></pre>
+## [36] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5</code></pre>
+<ul>
+<li>Or repeat the elements of <code>a</code> 2,4,6,8, and 10 times, respectively</li>
+</ul>
+<pre class="r"><code>rep(a, c(2,4,6,8,10))</code></pre>
+<pre><code>##  [1] 1 1 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5</code></pre>
 </div>
-<div id="calling-elements-in-vectors" class="section level2">
-<h2>Calling elements in vectors</h2>
-<p>If we would want just the third element, we would type</p>
+<div id="section-2" class="section level2">
+<h2></h2>
+<ul>
+<li>To call single elements in vectors, e.g. if we want to refer to the third element of <code>a</code>, we type</li>
+</ul>
 <pre class="r"><code>a[3]</code></pre>
 <pre><code>## [1] 3</code></pre>
 </div>
-<div id="multiple-vectors-in-one-object" class="section level2">
-<h2>Multiple vectors in one object</h2>
-<p>This we would refer to as a matrix</p>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<ul>
+<li>A rectangular organization of <em>n</em> x <em>m</em> numbers in <em>n</em> rows and <em>m</em> columns is known as a <strong>matrix</strong>, both in <code>R</code> and more generally</li>
+</ul>
 <pre class="r"><code>c &lt;- matrix(a, nrow = 5, ncol = 2)
 c</code></pre>
 <pre><code>##      [,1] [,2]
@@ -1640,32 +1632,43 @@ c</code></pre>
 ## [3,]    3    3
 ## [4,]    4    4
 ## [5,]    5    5</code></pre>
-</div>
-<div id="calling-elements-in-matrices-1" class="section level2">
-<h2>Calling elements in matrices #1</h2>
 <ul>
-<li>The first row is called by</li>
+<li>Notice that <code>R</code> is <strong>recycling</strong> <code>a</code> without lettting us know!</li>
+<li>Also notice that the name of the matrix could cause trouble!!</li>
+</ul>
+</div>
+<div id="section-3" class="section level2">
+<h2></h2>
+<ul>
+<li>Referencing elements in a matrix is done by <strong>indices</strong>, e.g. the first row is called by</li>
 </ul>
 <pre class="r"><code>c[1, ]</code></pre>
 <pre><code>## [1] 1 1</code></pre>
+</div>
+<div id="section-4" class="section level2">
+<h2></h2>
 <ul>
 <li>The second column is called by</li>
 </ul>
 <pre class="r"><code>c[, 2]</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
-<div id="calling-elements-in-matrices-2" class="section level2">
-<h2>Calling elements in matrices #2</h2>
+<div id="section-5" class="section level2">
+<h2></h2>
 <ul>
 <li>The intersection of the first row and second column is called by</li>
 </ul>
 <pre class="r"><code>c[1, 2]</code></pre>
 <pre><code>## [1] 1</code></pre>
-<p>In short; square brackets [] are used to call elements, rows, columns (and much more beyond the scope of this course)</p>
+<ul>
+<li>In short, the square brackets <a href="#section-20"></a> are used to call elements, rows, columns (and much more beyond the scope of this course)</li>
+</ul>
 </div>
-<div id="matrices-with-mixed-numeric-character-data" class="section level2">
-<h2>Matrices with mixed numeric / character data</h2>
-<p>If we add a character column to matrix <code>c</code>; everything becomes a character:</p>
+<div id="trying-to-mix-numerics-and-chars" class="section level2">
+<h2>Trying to mix numerics and chars</h2>
+<ul>
+<li>If we add a character column to matrix <code>c</code> everything becomes chars</li>
+</ul>
 <pre class="r"><code>cbind(c, letters[1:5])</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,] &quot;1&quot;  &quot;1&quot;  &quot;a&quot; 
@@ -1673,21 +1676,20 @@ c</code></pre>
 ## [3,] &quot;3&quot;  &quot;3&quot;  &quot;c&quot; 
 ## [4,] &quot;4&quot;  &quot;4&quot;  &quot;d&quot; 
 ## [5,] &quot;5&quot;  &quot;5&quot;  &quot;e&quot;</code></pre>
+<blockquote>
+<ul>
+<li>Vectors and matrices are 1D or 2D structures holdning elements of the <strong>same</strong> type (numerical or characters) - if we try to mix these two types <code>R</code> will automatically <em>cast</em> the numerical values into character values (chars)</li>
+</ul>
+</blockquote>
 </div>
-<div id="matrices-with-mixed-numeric-character-data-1" class="section level2">
-<h2>Matrices with mixed numeric / character data</h2>
-<p>Alternatively,</p>
-<pre class="r"><code>cbind(c, c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;))</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,] &quot;1&quot;  &quot;1&quot;  &quot;a&quot; 
-## [2,] &quot;2&quot;  &quot;2&quot;  &quot;b&quot; 
-## [3,] &quot;3&quot;  &quot;3&quot;  &quot;c&quot; 
-## [4,] &quot;4&quot;  &quot;4&quot;  &quot;d&quot; 
-## [5,] &quot;5&quot;  &quot;5&quot;  &quot;e&quot;</code></pre>
-<p>Remember, matrices and vectors are numerical OR character objects. They can never contain both and still be used for numerical calculations.</p>
 </div>
-<div id="data-frames" class="section level2">
+<div id="data-frames" class="section level1">
+<h1>Data frames</h1>
+<div id="data-frames-1" class="section level2">
 <h2>Data frames</h2>
+<ul>
+<li>To keep variables of different types in a 2D structure, the simplest answer is a <strong>data frame</strong></li>
+</ul>
 <pre class="r"><code>d &lt;- data.frame(&quot;V1&quot; = rnorm(5),
                 &quot;V2&quot; = rnorm(5, mean = 5, sd = 2), 
                 &quot;V3&quot; = letters[1:5])
@@ -1698,12 +1700,16 @@ d</code></pre>
 ## 3  1.55870831 2.469878  c
 ## 4  0.07050839 3.626294  d
 ## 5  0.12928774 4.108676  e</code></pre>
-<p>We ‘filled’ a dataframe with two randomly generated sets from the normal distribution - where <span class="math inline">\(V1\)</span> is standard normal and <span class="math inline">\(V2 \sim N(5,2)\)</span> - and a character set.</p>
+<ul>
+<li>Here a data frame is constructed with two randomly generated sets from the normal distribution where <span class="math inline">\(V1\)</span> is standard normal and <span class="math inline">\(V2 \sim N(5,2^2)\)</span> and then an interesting character vector</li>
+</ul>
 </div>
-<div id="data-frames-continued" class="section level2">
-<h2>Data frames (continued)</h2>
-<p>Data frames can contain both numerical and character elements at the same time, although never in the same column.</p>
-<p>You can name the columns and rows in data frames (just like in matrices)</p>
+<div id="section-6" class="section level2">
+<h2></h2>
+<ul>
+<li><p>Data frames can contain both numerical and character elements at the same time, although never in the same column.</p></li>
+<li><p>You can name the columns and rows in data frames (just like in matrices)</p></li>
+</ul>
 <pre class="r"><code>row.names(d) &lt;- c(&quot;row 1&quot;, &quot;row 2&quot;, &quot;row 3&quot;, &quot;row 4&quot;, &quot;row 5&quot;)
 d</code></pre>
 <pre><code>##                V1       V2 V3
@@ -1713,100 +1719,126 @@ d</code></pre>
 ## row 4  0.07050839 3.626294  d
 ## row 5  0.12928774 4.108676  e</code></pre>
 </div>
-<div id="calling-row-elements-in-data-frames" class="section level2">
-<h2>Calling row elements in data frames</h2>
-<p>There are two ways to obtain row <code>3</code> from data frame <code>d</code>:</p>
+<div id="section-7" class="section level2">
+<h2></h2>
+<ul>
+<li>There are (at least) two ways to obtain the third row from the data frame <code>d</code>, either using the name:</li>
+</ul>
 <pre class="r"><code>d[&quot;row 3&quot;, ]</code></pre>
 <pre><code>##             V1       V2 V3
 ## row 3 1.558708 2.469878  c</code></pre>
-<p>and</p>
+<ul>
+<li>or the position</li>
+</ul>
 <pre class="r"><code>d[3, ]</code></pre>
 <pre><code>##             V1       V2 V3
 ## row 3 1.558708 2.469878  c</code></pre>
-<p>The intersection between row 2 and column 4 can be obtained by</p>
-<pre class="r"><code>d[2, 3]</code></pre>
-<pre><code>## [1] b
-## Levels: a b c d e</code></pre>
 </div>
-<div id="calling-columns-elements-in-data-frames" class="section level2">
-<h2>Calling columns elements in data frames</h2>
-<p>Both</p>
-<pre class="r"><code>d[, &quot;V2&quot;] # and</code></pre>
+<div id="section-8" class="section level2">
+<h2></h2>
+<ul>
+<li>Calling columns in data frames can be done in precisely the same way</li>
+</ul>
+<pre class="r"><code>d[, &quot;V2&quot;]</code></pre>
 <pre><code>## [1] 8.430130 5.921832 2.469878 3.626294 4.108676</code></pre>
 <pre class="r"><code>d[, 2]</code></pre>
 <pre><code>## [1] 8.430130 5.921832 2.469878 3.626294 4.108676</code></pre>
-<p>yield the second column. But we can also use <code>$</code> to call variable names in data frame objects</p>
+</div>
+<div id="section-9" class="section level2">
+<h2></h2>
+<ul>
+<li>However, we can also use <code>$</code> to call variable names in data frame objects</li>
+</ul>
 <pre class="r"><code>d$V2</code></pre>
 <pre><code>## [1] 8.430130 5.921832 2.469878 3.626294 4.108676</code></pre>
+<ul>
+<li>Thus calling column vectors we can even write</li>
+</ul>
+<pre class="r"><code>d$V2[3:4]</code></pre>
+<pre><code>## [1] 2.469878 3.626294</code></pre>
 </div>
-<div id="beyond-two-dimensions" class="section level2">
-<h2>Beyond two dimensions</h2>
-<p>If you wish to use numerical objects that have more than two dimension, an array would be a suitable object. The following code yields a 3-dimensional array (2 rows, 4 columns and 3 matrices):</p>
-<pre class="r"><code>e &lt;- array(1:24, dim = c(2, 4, 3))
+</div>
+<div id="beyond-two-dimensions-arrays-and-lists" class="section level1">
+<h1>Beyond two dimensions: Arrays and lists</h1>
+<div id="arrays" class="section level2">
+<h2>Arrays</h2>
+<ul>
+<li>If you wish to use numerical objects that have more than two dimensions, an array would be a suitable object.</li>
+<li>The following code yields a 3-dimensional array, which may be thought of as 2 layers of a 3x4 matrix:</li>
+</ul>
+<pre class="r"><code>e &lt;- array(1:24, dim = c(3, 4, 2))
 e</code></pre>
 <pre><code>## , , 1
 ## 
 ##      [,1] [,2] [,3] [,4]
-## [1,]    1    3    5    7
-## [2,]    2    4    6    8
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
 ## 
 ## , , 2
 ## 
 ##      [,1] [,2] [,3] [,4]
-## [1,]    9   11   13   15
-## [2,]   10   12   14   16
-## 
-## , , 3
-## 
-##      [,1] [,2] [,3] [,4]
-## [1,]   17   19   21   23
-## [2,]   18   20   22   24</code></pre>
+## [1,]   13   16   19   22
+## [2,]   14   17   20   23
+## [3,]   15   18   21   24</code></pre>
 </div>
-<div id="indexing-an-array" class="section level2">
-<h2>Indexing an array</h2>
-<p>The square bracket identification works similarly to the identification of matrices and dataframes, but with the added dimension(s). For example,</p>
+<div id="section-10" class="section level2">
+<h2></h2>
+<ul>
+<li>The square bracket identification works similarly to the identification of matrices and dataframes, but with the added dimension(s).</li>
+<li>So to get the element in the first row of the third column in the second matrix you type</li>
+</ul>
 <pre class="r"><code>e[1, 3, 2]</code></pre>
-<pre><code>## [1] 13</code></pre>
-<p>yields the element in the first row of the third column in the second matrix. This is exactly the downside to an array: it is a series of matrices.</p>
-<p>In other words, characters and numerical elements may not be mixed.</p>
+<pre><code>## [1] 19</code></pre>
+<ul>
+<li>This is exactly the downside to an array: it is a series of matrices meaning that characters and numerical elements may not be mixed…</li>
+</ul>
 </div>
-<div id="potential-problem-with-array" class="section level2">
-<h2>Potential problem with array</h2>
-<p>If we replace the third matrix in the array by a character version of that matrix, we obtain</p>
-<pre class="r"><code>e[, , 3] &lt;- as.character(e[, , 3])
+<div id="section-11" class="section level2">
+<h2></h2>
+<ul>
+<li>So, we get problems if we replace the second matrix in the array by a character version of that same matrix</li>
+</ul>
+<pre class="r"><code>e[, , 2] &lt;- as.character(e[, , 2])
 e</code></pre>
 <pre><code>## , , 1
 ## 
 ##      [,1] [,2] [,3] [,4]
-## [1,] &quot;1&quot;  &quot;3&quot;  &quot;5&quot;  &quot;7&quot; 
-## [2,] &quot;2&quot;  &quot;4&quot;  &quot;6&quot;  &quot;8&quot; 
+## [1,] &quot;1&quot;  &quot;4&quot;  &quot;7&quot;  &quot;10&quot;
+## [2,] &quot;2&quot;  &quot;5&quot;  &quot;8&quot;  &quot;11&quot;
+## [3,] &quot;3&quot;  &quot;6&quot;  &quot;9&quot;  &quot;12&quot;
 ## 
 ## , , 2
 ## 
 ##      [,1] [,2] [,3] [,4]
-## [1,] &quot;9&quot;  &quot;11&quot; &quot;13&quot; &quot;15&quot;
-## [2,] &quot;10&quot; &quot;12&quot; &quot;14&quot; &quot;16&quot;
-## 
-## , , 3
-## 
-##      [,1] [,2] [,3] [,4]
-## [1,] &quot;17&quot; &quot;19&quot; &quot;21&quot; &quot;23&quot;
-## [2,] &quot;18&quot; &quot;20&quot; &quot;22&quot; &quot;24&quot;</code></pre>
+## [1,] &quot;13&quot; &quot;16&quot; &quot;19&quot; &quot;22&quot;
+## [2,] &quot;14&quot; &quot;17&quot; &quot;20&quot; &quot;23&quot;
+## [3,] &quot;15&quot; &quot;18&quot; &quot;21&quot; &quot;24&quot;</code></pre>
+<ul>
+<li>As for matrices the entire arrxay is cast to chars…</li>
+</ul>
 </div>
-<div id="solution-a-list" class="section level2">
-<h2>Solution: a list</h2>
-<p>List are just what it says they are: lists. You can have a list of everything mixed with everything. For example, an simple list can be created by</p>
+<div id="the-solution-lists" class="section level2">
+<h2>The solution: Lists</h2>
+<ul>
+<li>List are just what it says they are (i.e. lists), and you can have a list where the elements are of different types</li>
+<li>For example, create a simple list by typing</li>
+</ul>
 <pre class="r"><code>f &lt;- list(a)
 f</code></pre>
 <pre><code>## [[1]]
 ## [1] 1 2 3 4 5</code></pre>
-<p>Elements or objects within lists can be called by using double square brackets [[]]. For example, the first (and only) element in list <code>f</code> is object <code>a</code></p>
+<ul>
+<li>Elements or objects within lists can be called by using double square brackets, e.g the first (and only) element in list <code>f</code> is vector <code>a</code></li>
+</ul>
 <pre class="r"><code>f[[1]]</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
-<div id="lists-continued" class="section level2">
-<h2>Lists (continued)</h2>
-<p>We can simply add an object or element to an existing list</p>
+<div id="section-12" class="section level2">
+<h2></h2>
+<ul>
+<li>We can simply add an object or element to an existing list</li>
+</ul>
 <pre class="r"><code>f[[2]] &lt;- d
 f</code></pre>
 <pre><code>## [[1]]
@@ -1819,11 +1851,15 @@ f</code></pre>
 ## row 3  1.55870831 2.469878  c
 ## row 4  0.07050839 3.626294  d
 ## row 5  0.12928774 4.108676  e</code></pre>
-<p>to obtain a list with a vector and a data frame.</p>
+<ul>
+<li>Now our list consists of a vector and a data frame!</li>
+</ul>
 </div>
-<div id="lists-continued-1" class="section level2">
-<h2>Lists (continued)</h2>
-<p>We can add names to the list as follows</p>
+<div id="section-13" class="section level2">
+<h2></h2>
+<ul>
+<li>We can add names to the list as follows</li>
+</ul>
 <pre class="r"><code>names(f) &lt;- c(&quot;vector&quot;, &quot;data frame&quot;)
 f</code></pre>
 <pre><code>## $vector
@@ -1837,9 +1873,11 @@ f</code></pre>
 ## row 4  0.07050839 3.626294  d
 ## row 5  0.12928774 4.108676  e</code></pre>
 </div>
-<div id="calling-elements-in-lists" class="section level2">
-<h2>Calling elements in lists</h2>
-<p>Calling the vector (a) from the list can be done as follows</p>
+<div id="section-14" class="section level2">
+<h2></h2>
+<ul>
+<li>With names to the elements we can call the vector <code>a</code> from the list as follows</li>
+</ul>
 <pre class="r"><code>f[[1]]</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <pre class="r"><code>f[[&quot;vector&quot;]]</code></pre>
@@ -1849,25 +1887,52 @@ f</code></pre>
 </div>
 <div id="lists-in-lists" class="section level2">
 <h2>Lists in lists</h2>
-<p>Take the following example</p>
+<ul>
+<li>A construct more useful that it initially seems is a <em>list of lists</em></li>
+<li>Here we have a list with two identical elements</li>
+</ul>
 <pre class="r"><code>g &lt;- list(f, f)</code></pre>
-<p>To call the vector from the second list within the list g, use the following code</p>
+</div>
+<div id="section-15" class="section level2">
+<h2></h2>
+<ul>
+<li>To call the vector from the second list within the list <code>g</code>, use either of the following code</li>
+</ul>
 <pre class="r"><code>g[[2]][[1]]</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <pre class="r"><code>g[[2]]$vector</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
-<div id="logical-operators" class="section level2">
+</div>
+<div id="logical-operators" class="section level1">
+<h1>Logical operators</h1>
+<div id="logical-operators-1" class="section level2">
 <h2>Logical operators</h2>
 <ul>
-<li><p>Logical operators are signs that evaluate a statement, such as <code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, and <code>|</code> (OR) as well as <code>&amp;</code> (AND). Typing <code>!</code> before a logical operator takes the complement of that action. There are more operations, but these are the most useful.</p></li>
-<li><p>For example, if we would like elements out of matrix <code>c</code> that are larger than 3, we would type:</p></li>
+<li>Logical operators are operators that evaluate to either <code>TRUE</code> or <code>FALSE</code></li>
+<li>The most common statement include
+<ul>
+<li><code>==</code> (equal to)</li>
+<li><code>&lt;</code> (smaller than)</li>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>&lt;=</code> (smaller than or equal to)</li>
+<li><code>&gt;=</code> (greater than or equal to)</li>
+</ul></li>
+<li>The operators may be combined using <code>|</code> (OR) as well as <code>&amp;</code> (AND)</li>
+<li>Typing <code>!</code> before a logical operator takes the complement of that action</li>
+<li>There are more operations, but these are the most useful</li>
+</ul>
+</div>
+<div id="section-16" class="section level2">
+<h2></h2>
+<ul>
+<li>Logical operators are great for subsetting, e.g. if we would like elements out of matrix <code>c</code> that are larger than 3, we would type:</li>
 </ul>
 <pre class="r"><code>c[c &gt; 3]</code></pre>
 <pre><code>## [1] 4 5 4 5</code></pre>
-</div>
-<div id="why-does-a-logical-statement-on-a-matrix-return-a-vector" class="section level2">
-<h2>Why does a logical statement on a matrix return a vector?</h2>
+<ul>
+<li>Why does a logical statement on a matrix return a vector?</li>
+</ul>
 <pre class="r"><code>c &gt; 3</code></pre>
 <pre><code>##       [,1]  [,2]
 ## [1,] FALSE FALSE
@@ -1875,23 +1940,27 @@ f</code></pre>
 ## [3,] FALSE FALSE
 ## [4,]  TRUE  TRUE
 ## [5,]  TRUE  TRUE</code></pre>
-<p>The column values for <code>TRUE</code> may be of different length. A vector as a return is therefore more appropriate.</p>
-</div>
-<div id="logical-operators-contd" class="section level2">
-<h2>Logical operators (cont’d)</h2>
 <ul>
-<li>If we would like the elements that are smaller than 3 OR larger than 3, we could type</li>
+<li>The column values for <code>TRUE</code> may be of different length. A vector as a return is therefore more appropriate</li>
 </ul>
-<pre class="r"><code>c[c &lt; 3 | c &gt; 3] #c smaller than 3 or larger than 3</code></pre>
+</div>
+<div id="section-17" class="section level2">
+<h2></h2>
+<ul>
+<li>If we would like the elements that are smaller than 3 or larger than 3, we could type</li>
+</ul>
+<pre class="r"><code>c[c &lt; 3 | c &gt; 3]</code></pre>
 <pre><code>## [1] 1 2 4 5 1 2 4 5</code></pre>
-<p>or</p>
+<ul>
+<li>Analysing the query we realize that this is equivalent to asking for the elements <strong>not</strong> equal to 3</li>
+</ul>
 <pre class="r"><code>c[c != 3] #c not equal to 3</code></pre>
 <pre><code>## [1] 1 2 4 5 1 2 4 5</code></pre>
 </div>
-<div id="logical-operators-contd-1" class="section level2">
-<h2>Logical operators (cont’d)</h2>
+<div id="section-18" class="section level2">
+<h2></h2>
 <ul>
-<li>In fact, <code>c != 3</code> returns a matrix</li>
+<li>To understand the mechanism see how <code>c != 3</code> actually returns a Boolean matrix</li>
 </ul>
 <pre><code>##       [,1]  [,2]
 ## [1,]  TRUE  TRUE
@@ -1900,7 +1969,7 @@ f</code></pre>
 ## [4,]  TRUE  TRUE
 ## [5,]  TRUE  TRUE</code></pre>
 <ul>
-<li>Remember <code>c</code>?:</li>
+<li>And then recall the structure of <code>c</code></li>
 </ul>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    1
@@ -1909,70 +1978,82 @@ f</code></pre>
 ## [4,]    4    4
 ## [5,]    5    5</code></pre>
 </div>
-<div id="things-that-cannot-be-done" class="section level2">
-<h2>Things that cannot be done</h2>
+</div>
+<div id="a-few-final-notes" class="section level1">
+<h1>A few final notes</h1>
+<div id="missing-in-different-ways" class="section level2">
+<h2>Missing in different ways…</h2>
 <ul>
-<li>Things that have no representation in real number space (at least not without tremendous effort)
-<ul>
-<li>For example, the following code returns “Not a Number”</li>
-</ul></li>
+<li>Expressions that have no representation in real number space (at least not without tremendous analytical effort) results in a “Not a Number”</li>
 </ul>
 <pre class="r"><code>0 / 0</code></pre>
 <pre><code>## [1] NaN</code></pre>
 <ul>
-<li>Also impossible are calculations based on missing values (NA’s)</li>
+<li>Another special value is “Infinity”</li>
 </ul>
-<pre class="r"><code>mean(c(1, 2, NA, 4, 5))</code></pre>
+<pre class="r"><code>1/0</code></pre>
+<pre><code>## [1] Inf</code></pre>
+</div>
+<div id="section-19" class="section level2">
+<h2></h2>
+<ul>
+<li>These values are different from missing values coded as “Not Available”</li>
+</ul>
+<pre class="r"><code>h &lt;- c(1, 2, NA, 4, 5)</code></pre>
+<ul>
+<li>Of course the mean of a set of number including at least in NA is also impossible and therefore also missing</li>
+</ul>
+<pre class="r"><code>mean(h)</code></pre>
 <pre><code>## [1] NA</code></pre>
 </div>
-<div id="standard-solves-for-missing-values" class="section level2">
-<h2>Standard solves for missing values</h2>
-<p>There are two easy ways to perform “listwise deletion”:</p>
+<div id="section-20" class="section level2">
+<h2></h2>
+<ul>
+<li><p>There are to standard solves for missing values which should be applied only after careful consideration of why the data contains <code>NA</code>s</p></li>
+<li><p>One is through an additional parameters parsed to the function, e.g.</p></li>
+</ul>
 <pre class="r"><code>mean(c(1, 2, NA, 4, 5), na.rm = TRUE)</code></pre>
 <pre><code>## [1] 3</code></pre>
+<ul>
+<li>The other is to explicitly omit (delete) the <code>NA</code>s before calling the function - note how the calls are nested</li>
+</ul>
 <pre class="r"><code>mean(na.omit(c(1, 2, NA, 4, 5)))</code></pre>
 <pre><code>## [1] 3</code></pre>
 </div>
-<div id="floating-point-example" class="section level2">
-<h2>Floating point example</h2>
+<div id="beware-of-comparisons-that-include-floats" class="section level2">
+<h2>Beware of comparisons that include floats</h2>
 <pre class="r"><code>(3 - 2.9)</code></pre>
 <pre><code>## [1] 0.1</code></pre>
 <pre class="r"><code>(3 - 2.9) &lt;= 0.1</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>(3 - 2.9) - .1</code></pre>
 <pre><code>## [1] 8.326673e-17</code></pre>
-</div>
-<div id="some-programming-tips" class="section level2">
-<h2>Some programming tips:</h2>
-<ul>
-<li>keep your code tidy</li>
-<li>use comments (text preceded by <code>#</code>) to clarify what you are doing
-<ul>
-<li>If you look at your code again, one month from now: you will not know what you did –&gt; unless you use comments</li>
-</ul></li>
-<li>when working with functions, use the TAB key to quickly access the help for the function’s components</li>
-<li>work with logically named <code>R</code>-scripts
-<ul>
-<li>indicate the sequential nature of your work</li>
-</ul></li>
-<li>work with <code>RStudio</code> projects</li>
-<li>if allowed, place your project folders in some cloud-based environment</li>
-</ul>
+<!-- ## Some programming tips: -->
+<!-- - keep your code tidy -->
+<!-- - use comments (text preceded by `#`) to clarify what you are doing -->
+<p><!-- - If you look at your code again, one month from now: you will not know what you did (unless you use comments --></p>
+<!-- - when working with functions, use the TAB key to quickly access the help for the function's components -->
+<!-- - work with logically named `R`-scripts -->
+<!--     - indicate the sequential nature of your work -->
+<!-- - work with `RStudio` projects -->
+<!-- - if allowed, place your project folders in some cloud-based environment -->
 </div>
 </div>
 <div id="practical" class="section level1">
 <h1>Practical</h1>
 <div id="how-to-approach-the-next-practical" class="section level2">
 <h2>How to approach the next practical</h2>
-<p>Aim to make the exercises without looking at the answers.</p>
+<ul>
+<li>Aim to make the exercises without looking at the answers
 <ul>
 <li>Use the answers to evaluate your work</li>
 <li>Use the help to identify the workings of functions</li>
-</ul>
-<p>If this does not work out –&gt; switch to the answer-based practical.</p>
-<p>In any case; ask for help when you feel help is needed.</p>
+</ul></li>
+<li>If this does not work out then switch to the answer-based practical</li>
+<li>In any case feel free to ask for help when needed
 <ul>
-<li>Do not ‘struggle’ for too long: we only have limited time!</li>
+<li>Do not struggle for too long since we only have limited time!</li>
+</ul></li>
 </ul>
 </div>
 </div>
