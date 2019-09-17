@@ -4,10 +4,10 @@ author: "Peter Stoltze and Anne Vinkel Hansen"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
-    css: style.css
+    css: css/style.css
     logo: figures/logo_en.png
     transition: 0
-    smaller: yes
+    # smaller: yes
     # widescreen: yes
   # html_document:
   #   # css: style_ho.css

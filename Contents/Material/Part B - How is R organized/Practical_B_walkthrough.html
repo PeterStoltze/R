@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Gerko Vink" />
+<meta name="author" content="Anne and Peter (but mostly Gerko Vink)" />
 
 
 <title>Practical B</title>
@@ -375,7 +375,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Practical B</h1>
-<h4 class="author">Gerko Vink</h4>
+<h4 class="author">Anne and Peter (but mostly Gerko Vink)</h4>
 <h4 class="date">Statistical Programming with R</h4>
 
 </div>
@@ -508,7 +508,7 @@ dat3b</code></pre>
 <p>Columns can also be called by the <code>$</code> sign, but only if a name has been assigned. With dataframes assigning names happens automatically.</p>
 <p>Note that <code>R</code> automatically reports the values the character column can take. This means that the column is indeed a factor (a categorical variable - as it is supposed to be). A useful function to inspect the structure of a dataframe is <code>str()</code>. Try running it.</p>
 <pre class="r"><code>str(dat3)</code></pre>
-<pre><code>## 'data.frame':    6 obs. of  2 variables:
+<pre><code>## &#39;data.frame&#39;:    6 obs. of  2 variables:
 ##  $ V1: num  1 2 3 4 5 6
 ##  $ V2: Factor w/ 6 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,..: 1 2 3 4 5 6</code></pre>
 <p>Inspecting the structure of your data is vital, as you probably have imported your data from some other source. If we, at a later stage, start analyzing our data without the correct measurement level, we may run into problems. One problem that often occurs is that categorical variables (factors in <code>R</code>) are not coded as such.</p>
@@ -532,9 +532,11 @@ dat3</code></pre>
 <p>Either run the below code</p>
 <pre class="r"><code>load(&quot;boys.RData&quot;)</code></pre>
 <p>or double-click the <code>boys.RData</code> file on your machine (right-click and <code>open with RStudio</code> if it does not open by default in <code>RStudio</code>, but in <code>R</code>).</p>
-<p>You can also import it directly from the internet by running and loading the below code connection</p>
-<pre class="r"><code>con &lt;- url(&quot;https://gerkovink.github.io/Statistical-Programming-with-R/Contents/Material/Part%20B%20-%20How%20is%20R%20organized/boys.RData&quot;)
-load(con)</code></pre>
+<!-- You can also import it directly from the internet by running and loading the below code connection -->
+<!-- ```{r} -->
+<!-- con <- url("https://gerkovink.github.io/Statistical-Programming-with-R/Contents/Material/Part%20B%20-%20How%20is%20R%20organized/boys.RData") -->
+<!-- load(con) -->
+<!-- ``` -->
 <p>The <code>boys</code> object will be added to your Global Environment. You can now use the <code>boys</code> data by running</p>
 <pre class="r"><code>boys</code></pre>
 <hr />
@@ -601,7 +603,7 @@ load(con)</code></pre>
 <li><strong>Inspect the <code>boys</code> dataset with <code>str()</code>. Use one or more functions to find distributional summary information (at least information about the minimum, the maximum, the mean and the median) for all of the variables. Give the standard deviation for <code>age</code> and <code>bmi</code>. </strong> Tip: make use of the help (?) and help search (??) functionality in <code>R</code>.</li>
 </ol>
 <pre class="r"><code>str(boys)</code></pre>
-<pre><code>## 'data.frame':    748 obs. of  9 variables:
+<pre><code>## &#39;data.frame&#39;:    748 obs. of  9 variables:
 ##  $ age: num  0.035 0.038 0.057 0.06 0.062 0.068 0.068 0.071 0.071 0.073 ...
 ##  $ hgt: num  50.1 53.5 50 54.5 57.5 55.5 52.5 53 55.1 54.5 ...
 ##  $ wgt: num  3.65 3.37 3.14 4.27 5.03 ...
@@ -619,15 +621,15 @@ load(con)</code></pre>
 ##  Mean   : 9.159   Mean   :132.15   Mean   : 37.15   Mean   :18.07  
 ##  3rd Qu.:15.267   3rd Qu.:175.22   3rd Qu.: 59.58   3rd Qu.:19.53  
 ##  Max.   :21.177   Max.   :198.00   Max.   :117.40   Max.   :31.74  
-##                   NA's   :20       NA's   :4        NA's   :21     
+##                   NA&#39;s   :20       NA&#39;s   :4        NA&#39;s   :21     
 ##        hc          gen        phb            tv           reg     
 ##  Min.   :33.70   G1  : 56   P1  : 63   Min.   : 1.00   north: 81  
 ##  1st Qu.:48.12   G2  : 50   P2  : 40   1st Qu.: 4.00   east :161  
 ##  Median :53.00   G3  : 22   P3  : 19   Median :12.00   west :239  
 ##  Mean   :51.51   G4  : 42   P4  : 32   Mean   :11.89   south:191  
 ##  3rd Qu.:56.00   G5  : 75   P5  : 50   3rd Qu.:20.00   city : 73  
-##  Max.   :65.00   NA's:503   P6  : 41   Max.   :25.00   NA's :  3  
-##  NA's   :46                 NA's:503   NA's   :522</code></pre>
+##  Max.   :65.00   NA&#39;s:503   P6  : 41   Max.   :25.00   NA&#39;s :  3  
+##  NA&#39;s   :46                 NA&#39;s:503   NA&#39;s   :522</code></pre>
 <pre class="r"><code>sd(boys$age) #standard deviation for age</code></pre>
 <pre><code>## [1] 6.894052</code></pre>
 <pre class="r"><code>sd(boys$bmi, na.rm = TRUE) #standard deviation for bmi</code></pre>

@@ -1,13 +1,21 @@
 ---
 title: "Loops and functions"
-author: "Gerko Vink and Kees Mulder"
+author: "Peter Stoltze and Anne Vinkel Hansen"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
-    logo: logo.png
-    smaller: yes
-    widescreen: no
-  beamer_presentation: default
+    css: css/style.css
+    logo: figures/logo_en.png
+    transition: 0
+    # smaller: yes
+    # widescreen: yes
+  # html_document:
+  #   # css: style_ho.css
+  #   toc: true
+  #   toc_depth: 5
+  #   toc_float: true
+  #   number_sections: false
+
 ---
 
 ## Packages we use
@@ -17,13 +25,10 @@ library(MASS) #for the cats data
 
 ## This lecture
 
-* If-statements
-
-* For-loops
-
-* `Apply()`
-
-* Writing your own functions
+- If-statements
+- For-loops
+- Apply-family
+- Writing your own functions
 
 ## New controls and functions 
 
@@ -41,6 +46,7 @@ library(MASS) #for the cats data
 - `cat`: outputs an object with less conversion than `print()`
 
 # Conditionals and loops
+
 ## If-statements
 
 Often, we want to run some code ***only if*** some ***condition*** is true.
@@ -195,6 +201,7 @@ my.list
 ```
 
 # The `apply()` family
+
 ## `apply()`
 
 The `apply` family is a group of very useful functions that allow you to easily execute a function of your choice over a list of objects, such as a `list`, a `data.frame`, or `matrix`.
@@ -477,12 +484,6 @@ for (i in 1:length(rand.vec)){
 rand.vec
 ```
 
-## To conclude
-
-<center> 
-  <img src="endless_looping.gif" alt="HTML5 Icon" width = 50%>
-</center>
-[source](https://www.reddit.com/r/ProgrammerHumor/comments/8zbs72/unit_tests_ok_integration_tests/)
 
 # Practical
 
