@@ -4,7 +4,7 @@ author: "Gerko Vink, Anne Vinkel & Peter Stoltze"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
-    logo: logo.png
+    logo: logo_en.png
     smaller: yes
     widescreen: no
 ---

@@ -110,58 +110,7 @@ sleepdata2 <- sleepdata[-c(16, 32, 38), ]
 
 Note that the numbered option requires less code, but the named option has a much lower probability for error. As the dataset might change, or might get sorted differently, the second option may not be valid anymore. 
 
----
-
-8. **Plot brain weight as a function of species. **
-```{r}
-plot(brw ~ species, data = sleepdata2)
-```
-
----
-
-9. **Some animals have much heavier brains than other animals. Find out the names of the animals that have a brain weight larger than 1 standard deviation above the mean brain weight. Replicate the plot from Question 9 with only these animals and do not plot any information about the other animals. **
-
-To find out which animals have a brain weight larger than 1 standard deviation above the mean brain weight:
-```{r}
-sd.brw <- sd(sleepdata2$brw) #standard deviation  
-mean.brw <- mean(sleepdata2$brw) #mean
-which <- sleepdata2$brw > (mean.brw + (1 * sd.brw)) #which are larger?
-as.character(sleepdata2$species[which]) #names of the animals with brw > 1000
-```
-To plot these animals:
-```{r}
-plot(brw ~ species, data = sleepdata2[which, ])
-```
-
-The downside is that it still prints all the animals on the x-axis. This is due to the factor labels for `species` being copied to the smaller subset of the data. Plot automatically takes over the labels. For example, 
-```{r}
-sleepdata2$species[which]
-```
-
-returns only 3 mammals, but still has 62 factor levels. To get rid of the unused factor levels, we can use function `factor()`:
-```{r}
-sleepdata3 <- sleepdata2[which, ]
-sleepdata3$species <- factor(sleepdata3$species)
-sleepdata3$species
-```
-To plot the graph that we wanted:
-```{r}
-plot(brw ~ species, data = sleepdata3)
-```
-
----
-
-10. **Plot the log [use `log()`] of brain weight as a function of short-wave sleep. Use dark red triangles as plotting characters. Name the x-axis `Short-wave sleep` and name the y-axis `Brain weight`. Finally, Give the overall title the name `How sleep type relates to brain weight`.** Hint: have a look at `par` in the help to find information about the plotting parameters.
-```{r}
-plot(log(brw) ~ sws, data = sleepdata2, type = "p", pch = 2, col = "dark red",
-     xlab = "Short-wave sleep",
-     ylab = "Brain weight",
-     main = "How sleep type relates to brain weight")
-```
-
---- 
-
-11. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
+8. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
 
 ```{r}
 cabinet <- read.delim("cabinet.txt", encoding="UTF-8")
