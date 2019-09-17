@@ -205,24 +205,26 @@ See also [this `rmarkdown` cheat sheet](Contents/Material/Part A - Introduction/
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part C: `R` Functionality and reading in data
-    - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html)
-    - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html)
-    - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html)
-    - [Impractical C](Contents/Material/Part C - R-functionality/Practical_C.html)
-    - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt)
+    - *To appear*
+<!--     - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html) -->
+<!--     - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html) -->
+<!--     - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html) -->
+<!--     - [Impractical C](Contents/Material/Part C - R-functionality/Practical_C.html) -->
+<!--     - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt) -->
 - Part E: Loops and functions
     - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
-    - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html)
-    - [Impractical E](Contents/Material/Part E - Functions apply and looping/Practical_E.html)
+    - [Lecture E Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html)
+    - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html)
+    - [Practical E with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html)
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 ## Column 2
 
 ### Useful References
 - [The Google R style guide](https://google.github.io/styleguide/Rguide.xml)
 
-The above links are useful references that connect to today's materials. 
+The above links are useful references that connect to today's materials.
 
 # Thursday
 
@@ -231,31 +233,31 @@ The above links are useful references that connect to today's materials.
 ### Thursday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part F: Data manipulation and basic statstiscs
-    - [Lecture F](Contents/Material/Part F - Pipes/Lecture_F.html)
-    - [Practical F](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html)
-    - [Impractical F](Contents/Material/Part F - Pipes/Practical_F.html) 
-- Part I: Data visualization
-    - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html)
-    - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
-    - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html).
-    - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities
+<!-- - Part F: Data manipulation and basic statstiscs -->
+<!--     - [Lecture F](Contents/Material/Part F - Pipes/Lecture_F.html) -->
+<!--     - [Practical F](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html) -->
+<!--     - [Impractical F](Contents/Material/Part F - Pipes/Practical_F.html)  -->
+<!-- - Part I: Data visualization -->
+<!--     - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html) -->
+<!--     - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html) -->
+<!--     - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html). -->
+<!--     - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 ## Column 2
 
-### Useful links
+<!-- ### Useful links -->
 
-- [`magrittr`](https://magrittr.tidyverse.org)
-- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
-- [The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/)
+<!-- - [`magrittr`](https://magrittr.tidyverse.org) -->
+<!-- - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html) -->
+<!-- - [The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/) -->
 
-The above link details pretty much all you can do with package `ggplot2`.
+<!-- The above link details pretty much all you can do with package `ggplot2`. -->
 
-- [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/)
+<!-- - [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/) -->
 
-The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.   
+<!-- The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.    -->
 
 
 # Further studies
