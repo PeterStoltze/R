@@ -171,7 +171,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
     - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd)
-    - [Install R on UU laptop](https://gist.github.com/vankesteren/f2e198aa5ab4f6262b21a3d13bbea0b5)
+
 - Part B: How is `R` organized?
     - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html)
     - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html)

@@ -5,10 +5,16 @@ date: "Statistical Programming with R"
 output:
   ioslides_presentation:
     css: style.css
-    logo: logo_en.png
+    logo: figures/logo_en.png
     transition: 0
     smaller: yes
     # widescreen: yes
+  # html_document:
+  #   # css: style_ho.css
+  #   toc: true
+  #   toc_depth: 5
+  #   toc_float: true
+  #   number_sections: false
     
 ---
 
@@ -73,7 +79,9 @@ output:
 - If you know the name of the function that performs an operation, e.g. `anova()`, then you just type `?anova` or `help(anova)` in the console. 
 - If you do not know the name of the function: type `??` followed by your search criterion. For example `??anova` returns a list of all help pages that contain the word 'anova'
 
-- Alternatively, the internet will tell you almost everything you'd like to know and sites such as http://www.stackoverflow.com and http://www.stackexchange.com, as well as `Google` can be of tremendous help. 
+- Alternatively, the internet will tell you almost everything you'd like to know (and then some)
+
+- Sites such as http://www.stackoverflow.com and http://www.stackexchange.com, as well as `Google` can be of tremendous help. 
     - If you google `R` related issues; use 'R:' as a prefix in your search term
     
 ## Assigning elements to objects
@@ -87,7 +95,7 @@ output:
 a <- 100
 ```
 
-- Life hack: In RStudio use the shortcut "alt + -" (hyphen) to produce the left arrow `<-` in an R file
+- Life hack: In RStudio learn to use the shortcut "alt + -" (hyphen) to produce the left arrow `<-` in an R file
 
 
 ## Calling objects
