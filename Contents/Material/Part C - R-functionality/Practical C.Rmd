@@ -43,19 +43,7 @@ This is also a good time to set Rstudio to not automatically restore .RData into
 
 ---
 
-8. **Plot brain weight as a function of species. **
-
----
-
-9. **Some animals have much heavier brains than other animals. Find out the names of the animals that have a brain weight larger than 1 standard deviation above the mean brain weight. Replicate the plot from Question 9 with only these animals and do not plot any information about the other animals. **
-
----
-
-10. **Plot the log [use `log()`] of brain weight as a function of short-wave sleep. Use dark red triangles as plotting characters. Name the x-axis `Short-wave sleep` and name the y-axis `Brain weight`. Finally, Give the overall title the name `How sleep type relates to brain weight`.** Hint: have a look at `par` in the help to find information about the plotting parameters.
-
---- 
-
-11. **Let's try reading in some data with special characters. On the course homepage, you will find the file `ministers.txt`. Try reading this into R, and try getting the special characters right**
+8. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
 If you're going to work with special characters in your code files (say, writing comments in Danish) you will want to set the RStudio encoding to UTF-8 as welll, under `Tools` --> `Global Options` --> `Code` --> `Saving` 
 
 ---
