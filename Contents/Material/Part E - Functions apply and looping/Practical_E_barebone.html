@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Gerko Vink and Kees Mulder" />
+<meta name="author" content="Peter Stoltze and Anne Vinkel Hansen (adapted from Gerko Vink and Kees Mulder)" />
 
 
 <title>Practical E</title>
@@ -270,7 +270,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -364,7 +363,7 @@ summary {
 
 
 <h1 class="title toc-ignore">Practical E</h1>
-<h4 class="author">Gerko Vink and Kees Mulder</h4>
+<h4 class="author">Peter Stoltze and Anne Vinkel Hansen (adapted from Gerko Vink and Kees Mulder)</h4>
 <h4 class="date">Statistical Programming with R</h4>
 
 </div>
@@ -375,7 +374,7 @@ summary {
 <h4>Exercises</h4>
 <hr />
 <ol style="list-style-type: decimal">
-<li><strong>Create a <code>for</code>-loop that loops over all numbers between 0 and 10, but only prints numbers below 5</strong>.</li>
+<li><strong>Create a <code>for</code>-loop that loops over all numbers between 0 and 10, but only prints numbers below 5. </strong></li>
 </ol>
 <hr />
 <ol start="2" style="list-style-type: decimal">
@@ -383,24 +382,33 @@ summary {
 </ol>
 <hr />
 <ol start="3" style="list-style-type: decimal">
-<li><strong>Try to do the same thing without a for-loop, by subsetting a vector from 0 to 10 directly.</strong></li>
+<li><strong>Try to do the same thing without a for-loop, by subsetting a vector from 0 to 10 directly. Tip: Either create a Boolean vector or explore the subset-function.</strong></li>
 </ol>
 <hr />
 <ol start="4" style="list-style-type: decimal">
-<li><strong>Recreate the following matrix, where 1 to eight are multiplied by 1 on the first row, 2 on the second, etc. Tip: use <code>byrow = TRUE</code> to fill a matrix left-to-right instead of top-to-bottom.</strong></li>
+<li><strong>Recreate the following matrix, where the numbers 1 to 8 are multiplied by 1 on the first row, 2 on the second, etc. Tip: use <code>byrow = TRUE</code> to fill a matrix left-to-right instead of top-to-bottom.</strong></li>
 </ol>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    2    3    4    5    6    7    8
+## [2,]    2    4    6    8   10   12   14   16
+## [3,]    3    6    9   12   15   18   21   24
+## [4,]    4    8   12   16   20   24   28   32
+## [5,]    5   10   15   20   25   30   35   40</code></pre>
 <hr />
 <ol start="5" style="list-style-type: decimal">
-<li><strong>Create a 6 by 6 matrix of strings, where each cell contains “row + column = sum”. For example, the second row, third column would yield “2 + 3 = 6”. Tip: Create an empty 6x6 matrix first and fill it with values later. </strong></li>
+<li><strong>Create a 6-by-6 matrix of strings, where each cell contains a string like “row + col = sum”. For example, the second row, third column would yield “2 + 3 = 5”. Tip: First create an empty 6-by-6 matrix and then fill it with values. </strong></li>
 </ol>
 <hr />
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Modify your loop to put <code>&quot;Sum &gt; 8&quot;</code> in the matrix in the cells where that is true.</strong></li>
 </ol>
 <hr />
-<p>The <code>anscombe</code> data set is a wonderful data set from 1973 by Francis J. Anscombe aimed to demonstrate that pairs of variables can have the same statistical properties, while having completely differnt graphical representations. We will be using this data set more this week. If you’d like to know more about <code>anscombe</code>, you can simply call <code>?anscombe</code> to enter the help.</p>
+<p>The <code>anscombe</code> data set is a wonderful data set from 1973 by Francis J. Anscombe aimed to demonstrate that pairs of variables can have the same statistical properties, while having completely different graphical representations. We will be using this data set more this week. If you’d like to know more about <code>anscombe</code>, you can simply call <code>?anscombe</code> to enter the help.</p>
 <p>You can directly call <code>anscombe</code> from your console because the <code>datasets</code> package is a base package in <code>R</code>. This means that it is always included and loaded when you start an <code>R</code> instance. In general, when you would like to access functions or data sets from packages that are not automatically loaded, we don’t have to explicitly load the package. We can also call <code>package::thing-we-need</code> to directly ‘grab’ the <code>thing-we-need</code> from the <code>package</code> namespace. For example,</p>
-<p>This is especially handy within functions, as we can call <code>package::function-name</code> to borrow functionality from installed packages, without loading the whole package. Calling only those functions that you need is more memory-efficient than loading it all. More memory efficient means faster computation.</p>
+<pre class="r"><code>test &lt;- datasets::anscombe
+identical(test, anscombe) #test if identical</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>This is especially handy within functions, as we can call <code>package::function-name</code> to borrow functionality from installed packages without loading the whole package. Calling only those functions that you need is more memory-efficient than loading it all. More memory efficient means faster computation.</p>
 <hr />
 <ol start="7" style="list-style-type: decimal">
 <li><strong>Display summary statistics (for example, using <code>summary</code>) of each column of the <code>anscombe</code> dataset from the <code>datasets</code> package</strong></li>
@@ -409,19 +417,16 @@ summary {
 <ol start="8" style="list-style-type: decimal">
 <li><strong>Display summary statistics of each column of the <code>anscombe</code> dataset using <code>apply()</code>.</strong></li>
 </ol>
-<!-- Remember that in `R`, the first indicator in square brackets always indicates the row, and the second indicator always indicates the column, such that `anscombe[2, 3]` would give us the value for the intersection of the second row and the third column. The same rationale translates to the margins we would like `apply()` to iterate over. The argument `MARGIN = 2` specifies the columns, while `MARGIN = 1` would indicate that a function should be applied over the rows:  -->
-<!-- We now see a returned matrix of `11` columns, that give us the `summary()` over the 11 rows in the `anscombe` data set. -->
 <hr />
 <ol start="9" style="list-style-type: decimal">
 <li><strong>Display summary statistics of each column of the <code>anscombe</code> dataset using <code>sapply()</code>. </strong></li>
 </ol>
-<!-- We can see that `sapply()` returns a matrix. We don't have to specify any margins as the `anscombe` data set is of class `data.frame`:  -->
-<!-- Objects of class `data.frame` can be addressed as a list, where the columns are the listed elements (see Lecture B). The function `summary()` will automatically be applied over the listed elements.  -->
+<p>Remember that objects of class <code>data.frame</code> can be addressed as a list, where the columns are the listed elements (see Lecture B). With <code>sapply</code> the function <code>summary</code> will automatically be applied over the listed elements, hence we don’t have to specify any margins as the <code>anscombe</code> data set is in fact of class <code>data.frame</code>.</p>
 <hr />
 <ol start="10" style="list-style-type: decimal">
 <li><strong>Display summary statistics of each column of the <code>anscombe</code> dataset using <code>lapply()</code>. </strong></li>
 </ol>
-<!-- Function `lapply()` behaves just like `sapply()` - in fact, `sapply()` is a more user-friendly version of `lapply()`, but returns a list rather than a matrix. I, personally, prefer the `sapply()` - or the equivalent `apply()` over the columns - solution for `anscombe` data set. However, if a data set has many dimensions, the return from `lapply()` may be much more flexible to work with.    -->
+<p>Function <code>lapply()</code> behaves just like <code>sapply()</code> - in fact, <code>sapply()</code> is a more user-friendly version of <code>lapply()</code>, but returns a list rather than a matrix. Most prefer the elegant application of <code>sapply()</code> for the <code>anscombe</code> data set (or the equivalently <code>apply()</code> over the columns). However, if a data set has many dimensions, the return from <code>lapply()</code> may be much more flexible to work with.</p>
 <hr />
 <ol start="11" style="list-style-type: decimal">
 <li><strong>Write a function that takes a vector of numbers as input, and returns a string containing “The mean is XXX”, where XXX should be, of course, the mean of the input vector. </strong></li>
