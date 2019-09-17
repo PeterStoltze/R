@@ -3137,7 +3137,7 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>Recap</h2></hgroup><article  class="smaller " id="recap">
+<slide class=""><hgroup><h2>Recap</h2></hgroup><article  id="recap">
 
 <ul>
 <li>So far we have learned the basics of programming in <code>R</code>:
@@ -3152,9 +3152,9 @@ slide:not(.current) .plotly.html-widget{
 <li>Now we will add a bit more building blocks</li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Vectors and matrices</h2></hgroup><article  class="smaller " id="vectors-and-matrices">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Vectors and matrices</h2></hgroup><article  id="vectors-and-matrices">
 
-</article></slide><slide class=""><hgroup><h2>Numerical vectors</h2></hgroup><article  class="smaller " id="numerical-vectors">
+</article></slide><slide class=""><hgroup><h2>Numerical vectors</h2></hgroup><article  id="numerical-vectors">
 
 <ul>
 <li>Several elements of the same type, e.g. the integers from 1 to 5, can be concatenated into a <strong>vector</strong></li>
@@ -3165,7 +3165,7 @@ a</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section">
 
 <ul>
 <li>As is typical for <code>R</code> there a several ways to accomplish this</li>
@@ -3176,7 +3176,7 @@ b</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2>Character vectors</h2></hgroup><article  class="smaller " id="character-vectors">
+</article></slide><slide class=""><hgroup><h2>Character vectors</h2></hgroup><article  id="character-vectors">
 
 <ul>
 <li>Characters (or character strings) in <code>R</code> are indicated by the double quote identifier</li>
@@ -3195,7 +3195,7 @@ a.new</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-1">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
 
 <ul>
 <li>Replicating elements to build composite vectors, e.g. repeat <code>a</code> 10 times (for one reason or another)</li>
@@ -3214,7 +3214,7 @@ a.new</pre>
 
 <pre >##  [1] 1 1 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-2">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-2">
 
 <ul>
 <li>To call single elements in vectors, e.g. if we want to refer to the third element of <code>a</code>, we type</li>
@@ -3224,7 +3224,7 @@ a.new</pre>
 
 <pre >## [1] 3</pre>
 
-</article></slide><slide class=""><hgroup><h2>Matrices</h2></hgroup><article  class="smaller " id="matrices">
+</article></slide><slide class=""><hgroup><h2>Matrices</h2></hgroup><article  id="matrices">
 
 <ul>
 <li>A rectangular organization of <em>n</em> x <em>m</em> numbers in <em>n</em> rows and <em>m</em> columns is known as a <strong>matrix</strong>, both in <code>R</code> and more generally</li>
@@ -3245,7 +3245,7 @@ c</pre>
 <li>Also notice that the name of the matrix could cause trouble!!</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-3">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-3">
 
 <ul>
 <li>Referencing elements in a matrix is done by <strong>indices</strong>, e.g. the first row is called by</li>
@@ -3255,7 +3255,7 @@ c</pre>
 
 <pre >## [1] 1 1</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-4">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-4">
 
 <ul>
 <li>The second column is called by</li>
@@ -3265,7 +3265,7 @@ c</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-5">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-5">
 
 <ul>
 <li>The intersection of the first row and second column is called by</li>
@@ -3276,10 +3276,10 @@ c</pre>
 <pre >## [1] 1</pre>
 
 <ul>
-<li>In short, the square brackets <a href='#section-20' title=''></a> are used to call elements, rows, columns (and much more beyond the scope of this course)</li>
+<li>In short, the square brackets <a href='#section-21' title=''></a> are used to call elements, rows, columns (and much more beyond the scope of this course)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Trying to mix numerics and chars</h2></hgroup><article  class="smaller " id="trying-to-mix-numerics-and-chars">
+</article></slide><slide class=""><hgroup><h2>Trying to mix numerics and chars</h2></hgroup><article  id="trying-to-mix-numerics-and-chars">
 
 <ul>
 <li>If we add a character column to matrix <code>c</code> everything becomes chars</li>
@@ -3298,9 +3298,9 @@ c</pre>
 <li>Vectors and matrices are 1D or 2D structures holdning elements of the <strong>same</strong> type (numerical or characters) - if we try to mix these two types <code>R</code> will automatically <em>cast</em> the numerical values into character values (chars)</li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data frames</h2></hgroup><article  class="smaller " id="data-frames">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data frames</h2></hgroup><article  id="data-frames">
 
-</article></slide><slide class=""><hgroup><h2>Data frames</h2></hgroup><article  class="smaller " id="data-frames-1">
+</article></slide><slide class=""><hgroup><h2>Data frames</h2></hgroup><article  id="data-frames-1">
 
 <ul>
 <li>To keep variables of different types in a 2D structure, the simplest answer is a <strong>data frame</strong></li>
@@ -3322,7 +3322,7 @@ d</pre>
 <li>Here a data frame is constructed with two randomly generated sets from the normal distribution where \(V1\) is standard normal and \(V2 \sim N(5,2^2)\) and then an interesting character vector</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-6">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-6">
 
 <ul>
 <li><p>Data frames can contain both numerical and character elements at the same time, although never in the same column.</p></li>
@@ -3339,7 +3339,7 @@ d</pre>
 ## row 4  0.07050839 3.626294  d
 ## row 5  0.12928774 4.108676  e</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-7">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-7">
 
 <ul>
 <li>There are (at least) two ways to obtain the third row from the data frame <code>d</code>, either using the name:</li>
@@ -3359,7 +3359,7 @@ d</pre>
 <pre >##             V1       V2 V3
 ## row 3 1.558708 2.469878  c</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-8">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-8">
 
 <ul>
 <li>Calling columns in data frames can be done in precisely the same way</li>
@@ -3373,7 +3373,7 @@ d</pre>
 
 <pre >## [1] 8.430130 5.921832 2.469878 3.626294 4.108676</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-9">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-9">
 
 <ul>
 <li>However, we can also use <code>$</code> to call variable names in data frame objects</li>
@@ -3391,12 +3391,17 @@ d</pre>
 
 <pre >## [1] 2.469878 3.626294</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Beyond two dimensions:<br>Arrays and lists</h2></hgroup><article  class="smaller " id="beyond-two-dimensions-arrays-and-lists">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Beyond two dimensions:<br>Arrays and lists</h2></hgroup><article  id="beyond-two-dimensions-arrays-and-lists">
 
-</article></slide><slide class=""><hgroup><h2>Arrays</h2></hgroup><article  class="smaller " id="arrays">
+</article></slide><slide class=""><hgroup><h2>Arrays</h2></hgroup><article  id="arrays">
 
 <ul>
 <li>If you wish to use numerical objects that have more than two dimensions, an array would be a suitable object.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-10">
+
+<ul>
 <li>The following code yields a 3-dimensional array, which may be thought of as 2 layers of a 3x4 matrix:</li>
 </ul>
 
@@ -3417,7 +3422,7 @@ e</pre>
 ## [2,]   14   17   20   23
 ## [3,]   15   18   21   24</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-10">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-11">
 
 <ul>
 <li>The square bracket identification works similarly to the identification of matrices and dataframes, but with the added dimension(s).</li>
@@ -3432,7 +3437,7 @@ e</pre>
 <li>This is exactly the downside to an array: it is a series of matrices meaning that characters and numerical elements may not be mixed…</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-11">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-12">
 
 <ul>
 <li>So, we get problems if we replace the second matrix in the array by a character version of that same matrix</li>
@@ -3456,10 +3461,10 @@ e</pre>
 ## [3,] &quot;15&quot; &quot;18&quot; &quot;21&quot; &quot;24&quot;</pre>
 
 <ul>
-<li>As for matrices the entire arrxay is cast to chars…</li>
+<li>As for matrices the entire array is cast to chars…</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>The solution: Lists</h2></hgroup><article  class="smaller " id="the-solution-lists">
+</article></slide><slide class=""><hgroup><h2>The solution: Lists</h2></hgroup><article  id="the-solution-lists">
 
 <ul>
 <li>List are just what it says they are (i.e. lists), and you can have a list where the elements are of different types</li>
@@ -3480,7 +3485,7 @@ f</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-12">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-13">
 
 <ul>
 <li>We can simply add an object or element to an existing list</li>
@@ -3504,7 +3509,7 @@ f</pre>
 <li>Now our list consists of a vector and a data frame!</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-13">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-14">
 
 <ul>
 <li>We can add names to the list as follows</li>
@@ -3524,7 +3529,7 @@ f</pre>
 ## row 4  0.07050839 3.626294  d
 ## row 5  0.12928774 4.108676  e</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-14">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-15">
 
 <ul>
 <li>With names to the elements we can call the vector <code>a</code> from the list as follows</li>
@@ -3542,7 +3547,7 @@ f</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2>Lists in lists</h2></hgroup><article  class="smaller " id="lists-in-lists">
+</article></slide><slide class=""><hgroup><h2>Lists in lists</h2></hgroup><article  id="lists-in-lists">
 
 <ul>
 <li>A construct more useful that it initially seems is a <em>list of lists</em></li>
@@ -3551,7 +3556,7 @@ f</pre>
 
 <pre class = 'prettyprint lang-r'>g &lt;- list(f, f)</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-15">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-16">
 
 <ul>
 <li>To call the vector from the second list within the list <code>g</code>, use either of the following code</li>
@@ -3565,9 +3570,9 @@ f</pre>
 
 <pre >## [1] 1 2 3 4 5</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Logical operators</h2></hgroup><article  class="smaller " id="logical-operators">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Logical operators</h2></hgroup><article  id="logical-operators">
 
-</article></slide><slide class=""><hgroup><h2>Logical operators</h2></hgroup><article  class="smaller " id="logical-operators-1">
+</article></slide><slide class=""><hgroup><h2>Logical operators</h2></hgroup><article  id="logical-operators-1">
 
 <ul>
 <li>Logical operators are operators that evaluate to either <code>TRUE</code> or <code>FALSE</code></li>
@@ -3585,7 +3590,7 @@ f</pre>
 <li>There are more operations, but these are the most useful</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-16">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-17">
 
 <ul>
 <li>Logical operators are great for subsetting, e.g. if we would like elements out of matrix <code>c</code> that are larger than 3, we would type:</li>
@@ -3612,7 +3617,7 @@ f</pre>
 <li>The column values for <code>TRUE</code> may be of different length. A vector as a return is therefore more appropriate</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-17">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-18">
 
 <ul>
 <li>If we would like the elements that are smaller than 3 or larger than 3, we could type</li>
@@ -3630,7 +3635,7 @@ f</pre>
 
 <pre >## [1] 1 2 4 5 1 2 4 5</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-18">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-19">
 
 <ul>
 <li>To understand the mechanism see how <code>c != 3</code> actually returns a Boolean matrix</li>
@@ -3654,9 +3659,9 @@ f</pre>
 ## [4,]    4    4
 ## [5,]    5    5</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>A few final notes</h2></hgroup><article  class="smaller " id="a-few-final-notes">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>A few final notes</h2></hgroup><article  id="a-few-final-notes">
 
-</article></slide><slide class=""><hgroup><h2>Missing in different ways…</h2></hgroup><article  class="smaller " id="missing-in-different-ways">
+</article></slide><slide class=""><hgroup><h2>Missing in different ways…</h2></hgroup><article  id="missing-in-different-ways">
 
 <ul>
 <li>Expressions that have no representation in real number space (at least not without tremendous analytical effort) results in a &ldquo;Not a Number&rdquo;</li>
@@ -3674,7 +3679,7 @@ f</pre>
 
 <pre >## [1] Inf</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-19">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-20">
 
 <ul>
 <li>These values are different from missing values coded as &ldquo;Not Available&rdquo;</li>
@@ -3690,7 +3695,7 @@ f</pre>
 
 <pre >## [1] NA</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller " id="section-20">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-21">
 
 <ul>
 <li><p>There are to standard solves for missing values which should be applied only after careful consideration of why the data contains <code>NA</code>s</p></li>
@@ -3709,7 +3714,7 @@ f</pre>
 
 <pre >## [1] 3</pre>
 
-</article></slide><slide class=""><hgroup><h2>Beware of comparisons that include floats</h2></hgroup><article  class="smaller " id="beware-of-comparisons-that-include-floats">
+</article></slide><slide class=""><hgroup><h2>Beware of comparisons that include floats</h2></hgroup><article  id="beware-of-comparisons-that-include-floats">
 
 <pre class = 'prettyprint lang-r'>(3 - 2.9)</pre>
 
@@ -3741,9 +3746,9 @@ f</pre>
 
 <!-- - if allowed, place your project folders in some cloud-based environment -->
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical</h2></hgroup><article  class="smaller " id="practical">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical</h2></hgroup><article  id="practical">
 
-</article></slide><slide class=""><hgroup><h2>How to approach the next practical</h2></hgroup><article  class="smaller " id="how-to-approach-the-next-practical">
+</article></slide><slide class=""><hgroup><h2>How to approach the next practical</h2></hgroup><article  id="how-to-approach-the-next-practical">
 
 <ul>
 <li>Aim to make the exercises without looking at the answers
