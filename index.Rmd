@@ -205,12 +205,11 @@ See also [this `rmarkdown` cheat sheet](Contents/Material/Part A - Introduction/
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part C: `R` Functionality and reading in data
-    - *To appear*
-<!--     - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html) -->
-<!--     - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html) -->
-<!--     - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html) -->
-<!--     - [Impractical C](Contents/Material/Part C - R-functionality/Practical_C.html) -->
-<!--     - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt) -->
+    - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html)
+    - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html)
+    - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html)
+    - [Practical C with solutions](Contents/Material/Part C - R-functionality/Practical_C.html)
+    - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt)
 - Part E: Loops and functions
     - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
     - [Lecture E Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html)
