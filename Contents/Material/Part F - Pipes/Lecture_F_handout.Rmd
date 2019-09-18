@@ -1,337 +1,246 @@
 ---
-title: 'Data manipulation and pipes'
-author: "Gerko Vink & Erik-Jan van Kesteren"
+title: "Data manipulation and pipes"
+author: "Peter Stoltze and Anne Vinkel Hansen"
 date: "Statistical Programming with R"
-output: 
+output:
   html_document:
+    # css: style_ho.css
     toc: true
-    toc_depth: 5
+    toc_depth: 2
     toc_float: true
     number_sections: false
+  
 ---
-<style type="text/css">
-
-body{ /* Normal  */
-      font-size: 12px;
-  }
-td {  /* Table  */
-  font-size: 12px;
-}
-h1.title {
-  font-size: 18px;
-  color: DarkBlue;
-}
-h1 { /* Header 1 */
-  font-size: 18px;
-}
-h2 { /* Header 2 */
-    font-size: 18px;
-}
-h3 { /* Header 3 */
-  font-size: 18px;
-}
-code.r{ /* Code block */
-    font-size: 12px;
-}
-pre { /* Code block - determines code spacing between lines */
-    font-size: 14px;
-}
-</style>
-
----
-
-
 
 ## This lecture
 
-- Data manipulation
-
-- Basic analysis (correlation & t-test)
-
-- Pipes
-
-## New packages we use
+- This lecture will expand on data *wrangling* using tidyverse verbs and pipes
+- We use the following packages
 ```{r warning=FALSE, message=FALSE}
-library(MASS)     # for the cats data
+library(MASS)     # for the cats data (oh yes...)
 library(dplyr)    # data manipulation
-library(haven)    # in/exporting data
-library(magrittr) # pipes
+library(tidyr)    # pipes
 ```
 
-<img src="pipe.jpg" style="display:block;width:500px;margin-left:auto;margin-right:auto"></img>
+# Data manipulation with `dplyr`
 
-## New functions
+## What is `dplyr`
+- To the best of my knowledge a pun based on a deplier...
 
-- `transform()`: changing and adding columns
-- `dplyr::filter()`: row-wise selection (of cases)
-- `table()`: frequency tables
-- `class()`: object class
-- `levels()`: levels of a factor
-- `order()`: data entries in increasing order
-- `haven::read_sav()`: import SPSS data
-- `cor()`: bivariate correlation
-- `sample()`: drawing a sample
-- `t.test()`: t-test 
+<img src="figures/deplier.jpg" style="display:block;width:500px;margin-left:auto;margin-right:auto"></img>
 
-# Data manipulation
+## The `dplyr` verbs
+- The core functions of `dplyr` are suggestive verbs
+    - `filter` for subsetting rows (observations)
+    - `select` for subseting columss (variables)
+    - `arrange` for sorting variables
+    - `mutate` for making new variables
+- We will see how these compare to our previous way of doing things while enjoying...    
 
 ## The cats data
 ```{r}
 head(cats)
 ```
 
-
 ```{r}
 str(cats)
 ```
 
-## How to get only Female cats?
-
+## Selecting rows
+- We have already seen how to select **rows** using a logical query as index, e.g. all female cats
 ```{r}
-fem.cats <- cats[cats$Sex == "F", ]
-dim(fem.cats)
-head(fem.cats)
+cats2 <- cats[cats$Sex == "F", ]
+dim(cats2)
+head(cats2, n=3)
 ```
 
-## How to get only *heavy* cats?
+## Selecting rows with `dplyr`
+- The same can be accomplished by using the `filter` verb (or function) from `dplyr`
 ```{r}
-heavy.cats <- cats[cats$Bwt > 3, ]
-dim(heavy.cats)
-head(heavy.cats)
+cats2a <- filter(cats, Sex=="F")
+dim (cats2a)
+head(cats2, n=3)
 ```
 
-## How to get only *heavy* cats?
+## Selecting columns
+- With only female cats in the `cats2` data frame we no longer need the *gender* coloumn
 ```{r}
-heavy.cats <- subset(cats, Bwt > 3)
-dim(heavy.cats)
-head(heavy.cats)
+cats3 <- cats2[,-1]
+dim(cats3)
 ```
 
-## another way: `dplyr`
+- Let us verify that selecting **columns** either by positive or negative indexing yields the same result
 ```{r}
-filter(cats, Bwt > 2, Bwt < 2.2, Sex == "F")
+identical(cats2[,2:3], cats2[,-1])
 ```
 
-
-## Working with factors
+## Selecting columns with `dplyr`
+- To select columns with functions from `dplyr` use the `select` function
 ```{r}
-class(cats$Sex)
-levels(cats$Sex)
+cats3a <- select(cats2a, -Sex)
+dim(cats3a)
 ```
-
-## Working with factors
+- Again two approaches are possible
 ```{r}
-levels(cats$Sex) <- c("Female", "Male")
-table(cats$Sex)
-head(cats)
+identical(select(cats2a, -Sex), select(cats2a, Bwt, Hwt))
 ```
 
-## Sorting 
+## A small notice about `select`
+- If you load the library `MASS` after `dplyr`, then `select` refers to a function from the former package ratehr than the latter
+- We can specificy that we want to use the function from `dplyr` by writing
+```{r eval=FALSE}
+cats3a <- dplyr::select(cats2a, Bwt, Hwt)
+```
+- But often this can be avoided by loading packages in a specific order
 
+
+## Sorting
+- Are the female cats data frame sorted after heart weight? 
 ```{r}
-sorted.cats <- cats[order(cats$Bwt), ]
-head(sorted.cats)
+!is.unsorted(cats3$Hwt)
 ```
-
-
-## Combining matrices or dataframes
-
+- Let us sort them using index technique
 ```{r}
-cats.numbers <- cbind(Weight = cats$Bwt, Height = cats$Hwt)
-head(cats.numbers)
+cats3 <- cats3[order(cats3$Hwt),]
 ```
-
-## Combining matrices or dataframes
+- Test again
 ```{r}
-rbind(cats[1:3, ], cats[1:5, ])
+!is.unsorted(cats3$Hwt)
 ```
 
-
-# Basic analysis
-## Correlation
-
+## Sorting with `dplyr`
+- Sorting can be done a bit easier with `dplyr` verb `arrange`
 ```{r}
-cor(cats[, -1])
+!is.unsorted(cats3a$Hwt)
+cats3a <- arrange(cats3a, Hwt)
 ```
-With `[, -1]` we exclude the first column
-
-## Correlation
-
+- Test again
 ```{r}
-cor.test(cats$Bwt, cats$Hwt)
+!is.unsorted(cats3a$Hwt)
 ```
 
-What do we conclude?
-
-## Correlation
-
-```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'}
-plot(cats$Bwt, cats$Hwt)
-```
-
-## T-test
-Test the null hypothesis that the difference in mean heart weight between male and female cats is 0
+## Making new variables
+- Calculate the ratio between body weight and heart weight and find the mean
 ```{r}
-t.test(formula = Hwt ~ Sex, data = cats)
+cats3$ratio <- cats3$Bwt / cats3$Hwt
+mean (cats3$ratio)
 ```
 
-## T-test
-```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'}
-plot(formula = Hwt ~ Sex, data = cats)
+## Making new variables with `dplyr`
+- The relevant verb is `mutate`
+```{r}
+cats3a <- mutate (cats3a, ratio = Bwt / Hwt)
+mean (cats3a$ratio)
 ```
+
+
+<!-- # Basic analysis -->
+
+<!-- ## Correlation -->
+
+<!-- ```{r} -->
+<!-- cor(cats[, -1]) -->
+<!-- ``` -->
+<!-- With `[, -1]` we exclude the first column -->
+
+<!-- ## Correlation -->
+<!-- ```{r} -->
+<!-- cor.test(cats$Bwt, cats$Hwt) -->
+<!-- ``` -->
+
+<!-- What do we conclude? -->
+
+<!-- ## Correlation -->
+
+<!-- ```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'} -->
+<!-- plot(cats$Bwt, cats$Hwt) -->
+<!-- ``` -->
+
+<!-- ## T-test -->
+<!-- Test the null hypothesis that the difference in mean heart weight between male and female cats is 0 -->
+<!-- ```{r} -->
+<!-- t.test(formula = Hwt ~ Sex, data = cats) -->
+<!-- ``` -->
+
+<!-- ## T-test -->
+<!-- ```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'} -->
+<!-- plot(formula = Hwt ~ Sex, data = cats) -->
+<!-- ``` -->
 
 # Pipes
 
-## This is a pipe:
+## What is a pipe?
+- A reference to a number of connected tubes or *pipes* transporting an item or substance from one place to another...
+<img src="figures/pipe.jpg" style="display:block;width:500px;margin-left:auto;margin-right:auto"></img>
 
-```{r message=FALSE}
-boys <- 
-  read_sav("boys.sav") %>%
-  head()
-```
-
-It effectively replaces `head(read_sav("boys.sav"))`.
-
-
-## Why are pipes useful?
-Let's assume that we want to load data, change a variable, filter cases and select columns. Without a pipe, this would look like
+## Sequential calculations
+- In the previous example we calculated the mean ratio between body weight and heart weight for female cats through a number of steps
+- First we used indexing methods:
 ```{r}
-boys  <- read_sav("boys.sav")
-boys2 <- transform(boys, hgt = hgt / 100)
-boys3 <- filter(boys2, age > 15)
-boys4 <- subset(boys3, select = c(hgt, wgt, bmi))
+cats2 <- cats[cats$Sex == "F", ]
+cats3 <- cats2[,-1]
+cats3$ratio <- cats3$Bwt / cats3$Hwt
+mean (cats3$ratio)
 ```
 
-With the pipe:
+## Still sequential
+- Then we did the same using `dplyr` verbs
 ```{r}
-boys <-
-  read_sav("boys.sav") %>%
-  transform(hgt = hgt/100) %>%
-  filter(age > 15) %>%
-  subset(select = c(hgt, wgt, bmi))
+cats2a <- filter(cats, Sex == "F")
+cats3a <- dplyr::select(cats2a, -Sex)
+cats3a <- mutate(cats3a, ratio = Bwt / Hwt)
+mean (cats3a$ratio)
 ```
+- If we are only interested in this number, we leave a lot of intermediate steps...
 
-Benefit: a single object in memory that is easy to interpret
+## What if...
+- What if we immediately could send the result from one step to the next step?
+- This is possible using the pipe-operator `%>%`
+- It takes some key board strokes so you might want to learn Ctrl+Shift+M...
 
-
-## With pipes
-Your code becomes more readable:
-
-- data operations are structured from left-to-right and not from in-to-out
-- nested function calls are avoided
-- local variables and copied objects are avoided
-- easy to add steps in the sequence
-
-## What do pipes do:
-
-- `f(x)` becomes `x %>% f()`
+## First application of pipe
+- We now calulate the same result but leave no traces behind
 ```{r}
-rnorm(10) %>% mean()
+cats %>% 
+  filter(Sex == "F") %>% 
+  mutate(ratio = Bwt / Hwt) %>% 
+  summarise (mean(ratio))
 ```
-- `f(x, y)` becomes `x %>% f(y)` 
+- Notice that we used a new verb `summarise` rather that piping directly into `mean` - this *could* be done but requires a few extra tricks...
+
+## Saving the result from a pipe
+- We can also save the result if needed later
 ```{r}
-boys %>% cor(use = "pairwise.complete.obs")
+m <- cats %>% 
+  filter(Sex == "F") %>% 
+  mutate(ratio = Bwt / Hwt) %>% 
+  summarise (mean(ratio))
+m
+class(m)
 ```
-- `h(g(f(x)))` becomes `x %>% f %>% g %>% h` 
+
+## Grouped calculations
+- What about the male cats, why not see result for both sexes?
 ```{r}
-boys %>% subset(select = wgt) %>% na.omit() %>% max()
+cats %>% 
+  group_by(Sex) %>% 
+  mutate(ratio = Bwt / Hwt) %>% 
+  summarise (mean(ratio))
 ```
 
-## Useful: outlier filtering
+## A small table of summary statistics
+- Perhaps with other information as weel?
 ```{r}
-nrow(cats)
-
-cats.outl <- 
-  cats %>% 
-  filter(Hwt < mean(Hwt) + 3 * sd(Hwt), 
-         Hwt > mean(Hwt) - 3 * sd(Hwt))
-
-nrow(cats.outl)
-
-cats %>%  
-  filter(Hwt > mean(Hwt) + 3 * sd(Hwt))
+cats %>% 
+  group_by(Sex) %>% 
+  mutate(ratio = Bwt / Hwt) %>% 
+  summarise (n=n(), mb=mean(Bwt), mh=mean(Hwt), mr=mean(ratio))
 ```
 
-# More pipe stuff
-
-## The standard `%>%` pipe
-<center>
-<img src="flow_pipe.png" alt="HTML5 Icon" width = 75%>
-</center>
-
-## The `%$%` pipe
-<center>
-<img src="flow_$_pipe.png" alt="HTML5 Icon" width = 75%>
-</center>
-
-## The `%T>%` pipe
-<center>
-<img src="flow_T_pipe.png" alt="HTML5 Icon" width = 100%>
-</center>
-
-## The role of `.` in a pipe
-In `a %>% b(arg1, arg2, arg3)`, `a` will become `arg1`. With `.` we can change this.
-```{r error=TRUE}
-set.seed(123)
-1:5 %>%
-  mean() %>%
-  rnorm(10)
-```
-VS
-```{r}
-set.seed(123)
-1:5 %>% 
-  mean() %>%
-  rnorm(n = 10, mean = .)
-```
-The `.` can be used as a placeholder in the pipe. 
-
-## Placeholder example
-Remember: `sample()` takes a random sample from a vector
-```{r}
-sample(x = c(1, 1, 2, 3, 5, 8), size = 2)
-```
-
-Sample 3 positions from the alphabet and show the position and the letter
-```{r}
-set.seed(123)
-1:26 %>%
-  sample(3) %>%
-  paste(., LETTERS[.])
-```
-
-## Debugging pipelines
-If you don't know what's going on, run each statement separately!
-```{r}
-set.seed(123)
-1:26
-
-set.seed(123)
-1:26 %>% 
-  sample(3)
-
-set.seed(123)
-1:26 %>%
-  sample(3) %>%
-  paste(., LETTERS[.])
-```
-
-## Performing a t-test in a pipe
-```{r message=FALSE}
-cats %$%
-  t.test(Hwt ~ Sex)
-```
-is the same as 
-```{r eval=FALSE}
-t.test(Hwt ~ Sex, data = cats)
-```
-
-## Storing a t-test from a pipe
-```{r}
-cats.test <- 
-  cats %$%
-  t.test(Bwt ~ Sex)
-
-cats.test
-```
-# Practical 
+## Pipes with benefits 
+- Your code becomes more readable:
+    - data operations are structured from left-to-right and not from in-to-out
+    - nested function calls are avoided
+    - local variables and copied objects are avoided
+    - easy to add steps in the sequence
+- See the [Data Wrangling Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) for many more possibilities
