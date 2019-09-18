@@ -190,29 +190,28 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 - Part F: Data manipulation and basic statstiscs
     - [Lecture F](Contents/Material/Part F - Pipes/Lecture_F.html){target="_blank"}
     - [Lecture F Handout](Contents/Material/Part F - Pipes/Lecture_F_Handout.html){target="_blank"}
-<!--     - [Practical F](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html) -->
-<!--     - [Impractical F](Contents/Material/Part F - Pipes/Practical_F.html)  -->
 - Part I: Data visualization
     - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html){target="_blank"}
-    - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
-    - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html).
+    - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html){target="_blank"}
+    - [Practical I - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html){target="_blank"}
+    - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html){target="_blank"}
     - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities
 
-<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
+All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.
 
 ## Column 2
 
-<!-- ### Useful links -->
+### Useful links
 
-<!-- - [`magrittr`](https://magrittr.tidyverse.org) -->
-<!-- - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html) -->
-<!-- - [The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/) -->
+- [`magrittr`](https://magrittr.tidyverse.org)
+- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
+- [The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/)
 
-<!-- The above link details pretty much all you can do with package `ggplot2`. -->
+The above link details pretty much all you can do with package `ggplot2`.
 
-<!-- - [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/) -->
+- [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/)
 
-<!-- The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.    -->
+The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.
 
 
 # Further studies
