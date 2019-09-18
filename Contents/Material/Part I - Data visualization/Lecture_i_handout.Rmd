@@ -1,6 +1,6 @@
 ---
 title: 'Data visualisation'
-author: "Gerko Vink & Erik-Jan van Kesteren"
+author: "Gerko Vink, Erik-Jan van Kesteren & Anne Vinkel Hansen"
 date: "Statistical Programming with R"
 output: 
   html_document:
@@ -37,7 +37,6 @@ pre { /* Code block - determines code spacing between lines */
     font-size: 14px;
 }
 </style>
-
 ---
 
 ## We use the following packages
@@ -77,18 +76,18 @@ library(sf)       # Spatial features
     - Intuitions
 
 
-## Why visualise?
+<!-- ## Why visualise? -->
 
-<img src="anscombe.svg" style="display:block;width:90%;margin:0 auto;"></img>
-<p style="text-align:center;font-style:italic;font-size:0.5em;">Source: Anscombe, F. J. (1973). "Graphs in Statistical Analysis". American Statistician. 27 (1): 17–21.</p>
-
-
-## Why visualise?
-
-<img src="datasaurus.gif" style="display:block;width:90%;margin:0 auto;"></img>
+<!-- <img src="anscombe.svg" style="display:block;width:90%;margin:0 auto;"></img> -->
+<!-- <p style="text-align:center;font-style:italic;font-size:0.5em;">Source: Anscombe, F. J. (1973). "Graphs in Statistical Analysis". American Statistician. 27 (1): 17–21.</p> -->
 
 
-<p style="text-align:center;font-style:italic;font-size:0.5em;">Source: https://www.autodeskresearch.com/publications/samestats</p>
+<!-- ## Why visualise? -->
+
+<!-- <img src="datasaurus.gif" style="display:block;width:90%;margin:0 auto;"></img> -->
+
+
+<!-- <p style="text-align:center;font-style:italic;font-size:0.5em;">Source: https://www.autodeskresearch.com/publications/samestats</p> -->
 
 ## What we will do
 
@@ -98,13 +97,36 @@ library(sf)       # Spatial features
 
 ## `base` graphics in `R`
 
-```{r, echo=FALSE, fig.align='center'}
-par(mfrow = c(2,2), mar = c(4, 4, 3, 1))
-boys %$% hist(na.omit(hgt), main = "Histogram", xlab = "Height")
-boys %$% plot(density(na.omit(hgt)), main = "Density plot", xlab = "Height", bty = "L")
-boys %$% plot(hgt, wgt, main = "Scatter plot", xlab = "Height", ylab = "Weight", bty = "L")
-boys %$% boxplot(hgt~reg, main = "Boxplot", xlab = "Region", ylab = "Height")
-``` 
+First, recall:
+
+- Vectors
+
+```{r}
+height <- c(50.1, 53.5, 50.0, 54.5, 57.5)
+weight <- c(3.65, 3.37, 3.14, 4.27, 5.03)
+```
+
+- Data frames
+
+```{r}
+boys <- boys
+head(boys)
+
+```
+
+To call a variable in the data frame, use the $ notation: 
+```{r}
+boys$hgt[1:10]
+```
+
+
+<!-- ```{r, echo=FALSE, fig.align='center'} -->
+<!-- par(mfrow = c(2,2), mar = c(4, 4, 3, 1)) -->
+<!-- boys %$% hist(na.omit(hgt), main = "Histogram", xlab = "Height") -->
+<!-- boys %$% plot(density(na.omit(hgt)), main = "Density plot", xlab = "Height", bty = "L") -->
+<!-- boys %$% plot(hgt, wgt, main = "Scatter plot", xlab = "Height", ylab = "Weight", bty = "L") -->
+<!-- boys %$% boxplot(hgt~reg, main = "Boxplot", xlab = "Region", ylab = "Height") -->
+<!-- ```  -->
 
 ## Scatter plot
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
@@ -114,8 +136,7 @@ plot(x = boys$hgt, y = boys$wgt, main = "Scatter plot",
 
 ## Line chart
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
-plot(x = 1900+phones$year, y = phones$calls, type = "l", main = "Line chart",
-     xlab = "Year", ylab = "Phone calls in Belgium, millions", bty = "L")
+plot(x = 1:5, y = exp(1:5), type = "l", main = "Line chart", bty = "L")
 ```
 
 ## Bar chart
@@ -133,17 +154,16 @@ counts <- table(boys$reg)
 pie(x=counts, main="Pie chart")
 ```
 
-
 ## Histogram
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
 hist(boys$hgt, main = "Histogram", xlab = "Height")
 ```
 
-## Density
-```{r, fig.align='center', dev.args=list(bg="transparent")}
-dens <- density(boys$hgt, na.rm = TRUE)
-plot(dens, main = "Density plot", xlab = "Height", bty = "L")
-```
+<!-- ## Density -->
+<!-- ```{r, fig.align='center', dev.args=list(bg="transparent")} -->
+<!-- dens <- density(boys$hgt, na.rm = TRUE) -->
+<!-- plot(dens, main = "Density plot", xlab = "Height", bty = "L") -->
+<!-- ``` -->
 
 ## Box plot
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
@@ -179,25 +199,24 @@ boxplot(boys$hgt ~ boys$reg, main = "Boxplot",
 <!--               ylim = c(0, 1.05 * max(d$cumsum, na.rm = T)), ) # bc contains the x values for bars -->
 <!-- lines(bc, d$cumsum, type="b") # Cumulative counts line -->
 <!-- axis(side = 4, at = c(0,d$cumsum), labels = paste(c(0,round(100*d$cum_freq)))) # Add axis -->
-
 <!-- ``` -->
 
 
-## A lot can be done in base R!
+<!-- ## A lot can be done in base R! -->
 
-```{r dev.args=list(bg="transparent")}
-boys %>% md.pattern() # from mice
-```
+<!-- ```{r dev.args=list(bg="transparent")} -->
+<!-- boys %>% md.pattern() # from mice -->
+<!-- ``` -->
 
-## Many R objects have a `plot()` method
+<!-- ## Many R objects have a `plot()` method -->
 
-```{r, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
-result <- lm(age~wgt, boys)
-plot(result, which = 1)
-```
+<!-- ```{r, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")} -->
+<!-- result <- lm(age~wgt, boys) -->
+<!-- plot(result, which = 1) -->
+<!-- ``` -->
 
 
-## Neat! But what if we want more control?
+## But what if we want more control?
 
 # ggplot2
 
@@ -248,7 +267,7 @@ Create the plot
 gg <- 
   boys %>%
   ggplot(aes(x = age, y = bmi)) +
-  geom_point(col = "dark green")
+  geom_point()
 ```
 
 Add another layer (smooth fit line)
@@ -372,18 +391,18 @@ boys %>%
   theme(legend.position = "none")
 ```
 
-## Geoms: Density
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
-boys %>% 
-  filter(!is.na(reg)) %>% 
-  ggplot(aes(x = hgt, fill = reg)) +
-  geom_density(alpha = 0.5, colour = "transparent") +
-  xlim(0, 250) + 
-  labs(title = "Height across regions",
-       x     = "Height", 
-       fill  = "Region") +
-  theme_minimal()
-```
+<!-- ## Geoms: Density -->
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")} -->
+<!-- boys %>%  -->
+<!--   filter(!is.na(reg)) %>%  -->
+<!--   ggplot(aes(x = hgt, fill = reg)) + -->
+<!--   geom_density(alpha = 0.5, colour = "transparent") + -->
+<!--   xlim(0, 250) +  -->
+<!--   labs(title = "Height across regions", -->
+<!--        x     = "Height",  -->
+<!--        fill  = "Region") + -->
+<!--   theme_minimal() -->
+<!-- ``` -->
 
 
 ## Helpful link in RStudio
@@ -399,12 +418,17 @@ boys %>%
 
 We have time for a cursory introduction at most. 
 
-## Reading in spatial data
-```{r, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
+```{r, echo=FALSE, results="hide"}
 denmark <- st_read("DK_map.shp")
+```
 
+## Reading in spatial data
+```{r, eval=FALSE, fig.align='center', dev.args=list(bg="transparent")}
+denmark <- st_read("DK_map.shp")
+```
+
+```{r, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
 plot(st_geometry(denmark))
-
 ```
 
 ## Plotting regional attributes
@@ -413,7 +437,6 @@ denmark$proportion.over.70 <- denmark$over70/denmark$population
 
 plot(denmark["proportion.over.70"],
      main = "Proportion of population aged 70 years and above")
-
 ```
 
 ## Or we can `ggplot`
@@ -423,3 +446,4 @@ plot(denmark["proportion.over.70"],
 denmark %>% ggplot(aes(fill=proportion.over.70)) + geom_sf()
 
 ```
+
