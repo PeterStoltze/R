@@ -113,12 +113,22 @@ Note that the numbered option requires less code, but the named option has a muc
 8. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
 
 ```{r}
-cabinet <- read.delim("cabinet.txt", encoding="UTF-8")
+cabinet <- read.delim("cabinet.txt", encoding="UTF-8", stringsAsFactors = F)
 
 head(cabinet)
 ```
 
+But don't we want the dates to be dates rather than characters?
+
+```{r}
+# The date function assumes that I am giving dates in Danish. These variables are in English, so I'm resetting 
+Sys.setlocale(category = "LC_TIME", locale = "English")
+
+cabinet$Took.office <- as.Date(cabinet$Took.office, format = "%d %B %Y")
+```
+
 If you're going to work with special characters in your code files (say, writing comments in Danish) you will want to set the RStudio encoding to UTF-8 as welll, under `Tools` --> `Global Options` --> `Code` --> `Saving` 
+
 
 ---
 

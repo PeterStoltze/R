@@ -534,7 +534,7 @@ which</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><strong>Let’s try reading in some data with special characters. On the course homepage, you will find the file <code>cabinet.txt</code>. Try reading this into R, and try getting the special characters right</strong></li>
 </ol>
-<pre class="r"><code>cabinet &lt;- read.delim(&quot;cabinet.txt&quot;, encoding=&quot;UTF-8&quot;)
+<pre class="r"><code>cabinet &lt;- read.delim(&quot;cabinet.txt&quot;, encoding=&quot;UTF-8&quot;, stringsAsFactors = F)
 
 head(cabinet)</code></pre>
 <pre><code>##                                               Portfolio          Minister
@@ -551,6 +551,11 @@ head(cabinet)</code></pre>
 ## 4 27 June 2019   Incumbent Social Democrats
 ## 5 27 June 2019   Incumbent Social Democrats
 ## 6 27 June 2019   Incumbent Social Democrats</code></pre>
+<p>But don’t we want the dates to be dates rather than characters?</p>
+<pre class="r"><code># The date function assumes that I am giving dates in Danish. These variables are in English, so I&#39;m resetting 
+Sys.setlocale(category = &quot;LC_TIME&quot;, locale = &quot;English&quot;)</code></pre>
+<pre><code>## [1] &quot;English_United States.1252&quot;</code></pre>
+<pre class="r"><code>cabinet$Took.office &lt;- as.Date(cabinet$Took.office, format = &quot;%d %B %Y&quot;)</code></pre>
 <p>If you’re going to work with special characters in your code files (say, writing comments in Danish) you will want to set the RStudio encoding to UTF-8 as welll, under <code>Tools</code> –&gt; <code>Global Options</code> –&gt; <code>Code</code> –&gt; <code>Saving</code></p>
 <hr />
 <p>End of exercise</p>
