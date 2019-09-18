@@ -1,6 +1,6 @@
 ---
 title: "Practical I"
-author: "Gerko Vink & Erik-Jan van Kesteren"
+author: "Gerko Vink, Erik-Jan van Kesteren & Anne Vinkel Hansen"
 date: "Statistical Programming in R"
 output:
   html_document: default
