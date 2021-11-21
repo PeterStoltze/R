@@ -8,22 +8,15 @@ output:
 
 # Intro {.sidebar}
 
-This dashboard covers the course materials for the course [**USS24: Statistical programming with R**](https://www.utrechtsummerschool.nl/courses/social-sciences/data-science-statistical-programming-with-r). 
-<br> <br>
-We usually adapt the course as we go, so we suggest to access the materials online when we consider them. 
+This dashboard covers the course materials for the Ghana Statistical Service course to be held in Accra, December 6-9, 2021.
 
 ---
 
-Course leader: [Gerko Vink](https://www.gerkovink.com) <br>
 Instructors: 
 
- - [Erik-Jan van Kesteren](https://erikjanvankesteren.nl)
- - [Maarten Cruyff](https://www.uu.nl/medewerkers/mcruyff)
- - [Ayoub Bagheri](https://bagheria.github.io)
- - [Thom Volker](https://thomvolker.github.io)
-
-Study load: 1.5 ECTS <br>
-Location of Start: [Koningsberger building - Pangea hall](https://www.uu.nl/en/victor-j-koningsberger-building)
+ - Karen Risør Bjerre (krb@dst.dk)
+ - Mikkel Mollerup (mim@dst.dk)
+ - Peter Stoltze (psl@dst.dk)
 
 ---
 # Quick Overview
@@ -48,36 +41,27 @@ The course starts at a very basic level and builds up gradually. At the end of t
 Prerequisites:
 Participants are requested to bring their own laptop for lab meetings.
 
-### Certificate
-Participants will receive a certificate at the end of the course. 
-
 ## Column 2
 
 ### Daily schedule 
 
-| When?  |      | What?      |
-|:--------|:-------|:-------------|
-| 09.00 | 09.30  | Lecture |
-| 09:30 | 10.15  | Practical |
-| 10.15 | 10.45  | Discussion |
-|       | **break** |            |
-| 11.00 | 11.45  | Lecture |
-| 11:45 | 12.30  | Practical |
-|       | [Lunch](https://www.uu.nl/en/educatorium) |            |
-| 14:00 | 14.30  | Discussion |
-| 14:30 | 15:30 | Lecture |
-|       | **break** |            |
-| 15:45 | 16.30  | Practical |
-| 16:30 | 17:00  | Discussion |
+| Time        | Topic                                           |
+|:------------|:------------------------------------------------|
+| *Monday*    |                                                 |
+| Afternoon   | Introduction to R and RStudio (PSL)             |
+| *Tuesday*   |                                                 |
+| Morning     | Data manipulation (MIM)                         |
+| Afternoon   | Joins and summarizing data (KRB)                |
+| *Tuesday*   |                                                 |
+| Morning     | Quality and clean data (PSL)                    |
+| Afternoon   | Visualization (MIM)                             |
+| *Tuesday*   |                                                 |
+| Morning     | Rmarkdown (MIM)                                 |
+| Afternoon   | Loops and functions (KRB)                       |
+| *Friday*    |                                                 |
+| Morning     | Evaluation, agreement on summary mission report |
 
 
-### Lecture Hall locations
-| When?  | Where    |
-|:--------|:-------|
-| Tuesday | [Ruppert Blauw](https://goo.gl/maps/jG6Vzv5ugfCXvR8x8)  | 
-| Wednesday| [Koningsberger Cosmos](https://goo.gl/maps/ufn6aXVL9K48Gn7S6)  | 
-| Thursday | [Ruppert 040](https://goo.gl/maps/jG6Vzv5ugfCXvR8x8)  | 
-| Friday | [Koningsberger Cosmos](https://goo.gl/maps/ufn6aXVL9K48Gn7S6) |            
 
 
 # How to prepare
@@ -151,25 +135,25 @@ Naturally, you will need internet access for these services to be accessed. Wire
 ### Monday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part A: Introduction
-    - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html)
-    - [Lecture A Handout](Contents/Material/Part A - Introduction/Lecture_A_handout.html)
-    - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
-    - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
-    - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd)
-    - [Install R on UU laptop](https://gist.github.com/vankesteren/f2e198aa5ab4f6262b21a3d13bbea0b5)
-- Part B: How is `R` organized?
-    - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html)
-    - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html)
-    - [Practical B](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html)
-    - [Impractical B](Contents/Material/Part B - How is R organized/Practical_B.html)
-    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
-- Part C: `R` Functionality
-    - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html)
-    - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html)
-    - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html)
+<!-- - Part A: Introduction -->
+<!--     - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html) -->
+<!--     - [Lecture A Handout](Contents/Material/Part A - Introduction/Lecture_A_handout.html) -->
+<!--     - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html) -->
+<!--     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R) -->
+<!--     - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd) -->
+<!--     - [Install R on UU laptop](https://gist.github.com/vankesteren/f2e198aa5ab4f6262b21a3d13bbea0b5) -->
+<!-- - Part B: How is `R` organized? -->
+<!--     - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html) -->
+<!--     - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html) -->
+<!--     - [Practical B](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html) -->
+<!--     - [Impractical B](Contents/Material/Part B - How is R organized/Practical_B.html) -->
+<!--     - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData) -->
+<!-- - Part C: `R` Functionality -->
+<!--     - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html) -->
+<!--     - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html) -->
+<!--     - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html) -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 ## Column 2
 
@@ -195,20 +179,20 @@ See also [this `rmarkdown` cheat sheet](Contents/Material/Part A - Introduction/
 ### Tuesday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part D: Generating Data
-    - [Lecture D](Contents/Material/Part D - Data generation/Lecture_D.html)
-    - [Practical D](Contents/Material/Part D - Data generation/Practical_D_walkthrough.html)
-    - [Impractical D](Contents/Material/Part D - Data generation/Practical_D.html)
-- Part E: Custom functions
-    - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
-    - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html)
-    - [Impractical E](Contents/Material/Part E - Functions apply and looping/Practical_E.html)
-- Part F: Pipes
-    - [Lecture F](Contents/Material/Part F - Pipes/Lecture_F.html)
-    - [Practical F](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html)
-    - [Impractical F](Contents/Material/Part F - Pipes/Practical_F.html) 
+<!-- - Part D: Generating Data -->
+<!--     - [Lecture D](Contents/Material/Part D - Data generation/Lecture_D.html) -->
+<!--     - [Practical D](Contents/Material/Part D - Data generation/Practical_D_walkthrough.html) -->
+<!--     - [Impractical D](Contents/Material/Part D - Data generation/Practical_D.html) -->
+<!-- - Part E: Custom functions -->
+<!--     - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html) -->
+<!--     - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html) -->
+<!--     - [Impractical E](Contents/Material/Part E - Functions apply and looping/Practical_E.html) -->
+<!-- - Part F: Pipes -->
+<!--     - [Lecture F](Contents/Material/Part F - Pipes/Lecture_F.html) -->
+<!--     - [Practical F](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html) -->
+<!--     - [Impractical F](Contents/Material/Part F - Pipes/Practical_F.html)  -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 ## Column 2
 
@@ -226,21 +210,21 @@ The above links are useful references that connect to today's materials.
 ### Wednesday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part G: Statistical models
-    - [Lecture G](Contents/Material/Part G - Statistical models/Lecture_G.html)
-    - [Practical G](Contents/Material/Part G - Statistical models/PracticalG_walkthrough.html)
-    - [Impractical G](Contents/Material/Part G - Statistical models/PracticalG.html)
-- Part H: Statistical Inference
-    - [Lecture H](Contents/Material/Part H - Statistical inference/Lecture_H.html)
-    - [Practical H](Contents/Material/Part H - Statistical inference/PracticalH_walkthrough.html)
-    - [Impractical H](Contents/Material/Part H - Statistical inference/PracticalH.html)
-    - [A plot that demonstrates the (mis)use of Confidence Intervals](https://www.gerkovink.com/markup/Archive/2019/Wk4/Solution_to_Ex5.html)
-- Part I: Data visualization
-    - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html)
-    - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
-    - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html).
+<!-- - Part G: Statistical models -->
+<!--     - [Lecture G](Contents/Material/Part G - Statistical models/Lecture_G.html) -->
+<!--     - [Practical G](Contents/Material/Part G - Statistical models/PracticalG_walkthrough.html) -->
+<!--     - [Impractical G](Contents/Material/Part G - Statistical models/PracticalG.html) -->
+<!-- - Part H: Statistical Inference -->
+<!--     - [Lecture H](Contents/Material/Part H - Statistical inference/Lecture_H.html) -->
+<!--     - [Practical H](Contents/Material/Part H - Statistical inference/PracticalH_walkthrough.html) -->
+<!--     - [Impractical H](Contents/Material/Part H - Statistical inference/PracticalH.html) -->
+<!--     - [A plot that demonstrates the (mis)use of Confidence Intervals](https://www.gerkovink.com/markup/Archive/2019/Wk4/Solution_to_Ex5.html) -->
+<!-- - Part I: Data visualization -->
+<!--     - [Lecture I](Contents/Material/Part I - Data visualization/Lecture_i.html) -->
+<!--     - [Practical I](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html) -->
+<!--     - [Impractical I](Contents/Material/Part I - Data visualization/Practical_i.html). -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 ## Column 2
 
@@ -272,21 +256,21 @@ boys %$% lm(age ~ reg) %>% coef()
 ### Thursday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part J: Model estimation
-    - [Lecture JK](Contents/Material/Part JK - Model estimation/Lecture_J.html)
-    - [Practical JK](Contents/Material/Part JK - Model estimation/Practical_J_walkthrough.html)
-    - [Impractical JK](Contents/Material/Part JK - Model estimation/Practical_J.html)
-- Part K: Model estimation
-    - [Lecture JK](Contents/Material/Part JK - Model estimation/Lecture_J.html)
-    - [Practical JK](Contents/Material/Part JK - Model estimation/Practical_J_walkthrough.html)
-    - [Impractical JK](Contents/Material/Part JK - Model estimation/Practical_J.html)
-- Part L: GLM's
-    - [Lecture L](Contents/Material/Part L - GLMs/Lecture_L.html)
-    - [The other, much longer, Lecture L](Contents/Material/Part L - GLMs/ch8_ioslides.html)
-    - [Practical L](Contents/Material/Part L - GLMs/Practical_L_walkthrough.html)
-    - [Impractical L](Contents/Material/Part L - GLMs/Practical_L.html)
+<!-- - Part J: Model estimation -->
+<!--     - [Lecture JK](Contents/Material/Part JK - Model estimation/Lecture_J.html) -->
+<!--     - [Practical JK](Contents/Material/Part JK - Model estimation/Practical_J_walkthrough.html) -->
+<!--     - [Impractical JK](Contents/Material/Part JK - Model estimation/Practical_J.html) -->
+<!-- - Part K: Model estimation -->
+<!--     - [Lecture JK](Contents/Material/Part JK - Model estimation/Lecture_J.html) -->
+<!--     - [Practical JK](Contents/Material/Part JK - Model estimation/Practical_J_walkthrough.html) -->
+<!--     - [Impractical JK](Contents/Material/Part JK - Model estimation/Practical_J.html) -->
+<!-- - Part L: GLM's -->
+<!--     - [Lecture L](Contents/Material/Part L - GLMs/Lecture_L.html) -->
+<!--     - [The other, much longer, Lecture L](Contents/Material/Part L - GLMs/ch8_ioslides.html) -->
+<!--     - [Practical L](Contents/Material/Part L - GLMs/Practical_L_walkthrough.html) -->
+<!--     - [Impractical L](Contents/Material/Part L - GLMs/Practical_L.html) -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 # Friday
 
@@ -295,20 +279,20 @@ All lectures are in `html` format. Practicals are walkthrough files that guide y
 ### Friday's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part M: Classification & Clustering
-    - [Lecture M](Contents/Material/Part M - Unsupervised learning/Lecture_M.html)
-    - [Practical M](Contents/Material/Part M - Unsupervised learning/Practical_M_walkthrough.html)
-    - [Impractical M](Contents/Material/Part M - Unsupervised learning/Practical_M.html)
-- Part N: Bootstrapping
-    - [Lecture N](Contents/Material/Part N - Bootstrapping/Lecture_N.html)
-    - [Practical N](Contents/Material/Part N - Bootstrapping/Practical_N_walkthrough.html)
-    - [Impractical N](Contents/Material/Part N - Bootstrapping/Practical_N.html)
-- Part O: Monte Carlo simulation
-    - [Lecture O](Contents/Material/Part O - Monte carlo simulation/Lecture_O.html)
-    - [Practical O](Contents/Material/Part O - Monte carlo simulation/Practical_O_walkthrough.html)
-    - [Impractical O](Contents/Material/Part O - Monte carlo simulation/Practical_O.html)
+<!-- - Part M: Classification & Clustering -->
+<!--     - [Lecture M](Contents/Material/Part M - Unsupervised learning/Lecture_M.html) -->
+<!--     - [Practical M](Contents/Material/Part M - Unsupervised learning/Practical_M_walkthrough.html) -->
+<!--     - [Impractical M](Contents/Material/Part M - Unsupervised learning/Practical_M.html) -->
+<!-- - Part N: Bootstrapping -->
+<!--     - [Lecture N](Contents/Material/Part N - Bootstrapping/Lecture_N.html) -->
+<!--     - [Practical N](Contents/Material/Part N - Bootstrapping/Practical_N_walkthrough.html) -->
+<!--     - [Impractical N](Contents/Material/Part N - Bootstrapping/Practical_N.html) -->
+<!-- - Part O: Monte Carlo simulation -->
+<!--     - [Lecture O](Contents/Material/Part O - Monte carlo simulation/Lecture_O.html) -->
+<!--     - [Practical O](Contents/Material/Part O - Monte carlo simulation/Practical_O_walkthrough.html) -->
+<!--     - [Impractical O](Contents/Material/Part O - Monte carlo simulation/Practical_O.html) -->
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
+<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 
 # To continue
